@@ -21,14 +21,12 @@ export default function ContentMenu() {
           borderRadius: 0,
         },
         close: {
-          top: 10,
-          left: "100vw",
+          top: 0,
           bottom: 0,
-          right: 100,
+          right: 0,
           opacity: 0.8,
           width: 0,
           height: 0,
-          borderRadius: "50%",
         },
       }}
       transition={{

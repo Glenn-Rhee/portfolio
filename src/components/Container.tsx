@@ -9,7 +9,7 @@ export default function Container(props: ContainerProps) {
   return (
     <div
       className={clsx(
-        "h-screen w-screen py-3 px-10 bg-red-900 relative -z-40",
+        "h-screen w-screen flex items-center justify-center pt-20 px-10 md:px-16 lg:px-32 relative z-10",
         className
       )}
     >

@@ -1,7 +1,10 @@
+import Container from "@/components/Container";
+import MainPage from "@/components/MainPage";
 
 export default function HomePage() {
   return (
-    <div className="">
-    </div>
+    <Container>
+      <MainPage />
+    </Container>
   );
 }

@@ -8,7 +8,7 @@ export default function HumbergerMenu() {
   return (
     <button
       onClick={toggle}
-      className="cursor-pointer relative z-10 p-3 space-y-2 block lg:hidden"
+      className="cursor-pointer relative z-30 p-3 space-y-2 block lg:hidden"
     >
       <Separator />
       <Separator isSecond />

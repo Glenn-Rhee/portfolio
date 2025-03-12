@@ -13,7 +13,7 @@ export default function ContentMenu() {
         open: {
           width: "100vw",
           height: "100vh",
-          opacity: 0.8,
+          opacity: 0.9,
           top: 0,
           left: 0,
           right: 0,
@@ -24,7 +24,7 @@ export default function ContentMenu() {
           top: 0,
           bottom: 0,
           right: 0,
-          opacity: 0.8,
+          opacity: 0.9,
           width: 0,
           height: 0,
         },

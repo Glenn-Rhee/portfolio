@@ -4,8 +4,25 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 
 export default function ContentMenu() {
-  const { isOpen, setIsOpen } = useNavbar();
-  const menues = ["Home", "About", "Projects", "Contact"];
+  const { isOpen, setIsOpen, gapFromTop } = useNavbar();
+  const menues = [
+    {
+      title: "Home",
+      min: -1,
+      max: 570,
+    },
+    {
+      title: "About",
+      min: 570,
+      max: 1000,
+    },
+    {
+      title: "Projects",
+    },
+    {
+      title: "Contact",
+    },
+  ];
 
   return (
     <motion.div
@@ -66,9 +83,14 @@ export default function ContentMenu() {
                 delay: +("0.4" + i + 9),
               }}
               key={i}
-              className="text-gray-100 cursor-pointer text-xl font-semibold after:block after:content-[''] after:duration-150 after:mt-1 hover:after:w-full after:w-0 after:mx-auto after:transition-all after:h-[2px] after:bg-white"
+              className={clsx(
+                "text-gray-100 cursor-pointer text-xl font-semibold after:block after:content-[''] after:duration-150 after:mt-1 hover:after:w-full after:w-0 after:mx-auto after:transition-all after:h-[2px] after:bg-white",
+                {
+                  "after:w-full": gapFromTop > v.min! && gapFromTop <= v.max!,
+                }
+              )}
             >
-              <a href={`#${v.toLowerCase()}`}>{v}</a>
+              <a href={`#${v.title.toLowerCase()}`}>{v.title}</a>
             </motion.span>
           ))}
         </>

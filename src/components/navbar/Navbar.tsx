@@ -20,6 +20,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [setGapFromTop]);
 
+  console.log(gapFromTop);
   return (
     <>
       <nav className="h-18 lg:h-20 px-10 md:px-16 lg:px-32 fixed top-0 z-30 right-0 left-0 flex items-center justify-between lg:justify-self-start w-screen bg-transparent shadow-[0_1px_8px_0_rgba(100,120,255,0.1)] backdrop-blur-[7px]">
@@ -46,16 +47,20 @@ export default function Navbar() {
               <House size={24} color="oklch(0.208 0.042 265.755)" />
             </a>
           </ItemNavbar>
-          <ItemNavbar isActive={gapFromTop > 570}>
+          <ItemNavbar isActive={gapFromTop > 570 && gapFromTop <= 1300}>
             <a href="#about">
               <UserRound size={24} color="oklch(0.208 0.042 265.755)" />
             </a>
           </ItemNavbar>
-          <ItemNavbar>
-            <FolderOpenDot size={24} color="oklch(0.208 0.042 265.755)" />
+          <ItemNavbar isActive={gapFromTop > 1300 && gapFromTop <= 1900}>
+            <a href="#projects">
+              <FolderOpenDot size={24} color="oklch(0.208 0.042 265.755)" />
+            </a>
           </ItemNavbar>
           <ItemNavbar>
-            <Mail size={24} color="oklch(0.208 0.042 265.755)" />
+            <a href="#contact">
+              <Mail size={24} color="oklch(0.208 0.042 265.755)" />
+            </a>
           </ItemNavbar>
         </ul>
         <HumbergerMenu />

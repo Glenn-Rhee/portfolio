@@ -14,10 +14,12 @@ export default function ContentMenu() {
     {
       title: "About",
       min: 570,
-      max: 1000,
+      max: 1900,
     },
     {
       title: "Projects",
+      min: 1300,
+      max: 1900,
     },
     {
       title: "Contact",

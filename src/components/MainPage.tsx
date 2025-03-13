@@ -1,8 +1,31 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useNavbar } from "@/store/NavbarStore";
 
 export default function MainPage() {
+  const { gapFromTop } = useNavbar();
+  const [isShow, setIsShow] = useState(gapFromTop >= 0 && gapFromTop <= 570);
+
+  const variantsText: Variants = {
+    show: {
+      x: 0,
+      opacity: 1,
+    },
+    hide: {
+      x: -40,
+      opacity: 0,
+    },
+  };
+  useEffect(() => {
+    if (gapFromTop > 570) {
+      setIsShow(false);
+    } else {
+      setIsShow(true);
+    }
+  }, [gapFromTop]);
+
   return (
     <div className="grid -mt-8 md:mt-0 grid-cols-1 md:grid-cols-[55%_1fr] lg:grid-cols-[65%_1fr] z-50 gap-x-4 w-[100%]">
       <div className="flex flex-col text-center md:text-start justify-center gap-y-4 md:gap-y-6 md:pe-8 lg:pe-20">
@@ -11,10 +34,8 @@ export default function MainPage() {
             x: -40,
             opacity: 0,
           }}
-          animate={{
-            x: 0,
-            opacity: 1,
-          }}
+          variants={variantsText}
+          animate={isShow ? "show" : "hide"}
           transition={{
             duration: 0.4,
             ease: "easeOut",
@@ -29,10 +50,8 @@ export default function MainPage() {
             x: -40,
             opacity: 0,
           }}
-          animate={{
-            x: 0,
-            opacity: 1,
-          }}
+          variants={variantsText}
+          animate={isShow ? "show" : "hide"}
           transition={{
             duration: 0.4,
             delay: 0.2,
@@ -47,10 +66,8 @@ export default function MainPage() {
             x: -40,
             opacity: 0,
           }}
-          animate={{
-            x: 0,
-            opacity: 1,
-          }}
+          variants={variantsText}
+          animate={isShow ? "show" : "hide"}
           transition={{
             duration: 0.4,
             delay: 0.4,
@@ -67,10 +84,8 @@ export default function MainPage() {
             x: -40,
             opacity: 0,
           }}
-          animate={{
-            x: 0,
-            opacity: 1,
-          }}
+          variants={variantsText}
+          animate={isShow ? "show" : "hide"}
           transition={{
             duration: 0.4,
             delay: 0.6,
@@ -91,10 +106,8 @@ export default function MainPage() {
           x: -40,
           opacity: 0,
         }}
-        animate={{
-          x: 0,
-          opacity: 1,
-        }}
+        animate={isShow ? "show" : "hide"}
+        variants={variantsText}
         transition={{
           duration: 0.4,
           delay: 0.4,

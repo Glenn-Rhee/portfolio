@@ -4,8 +4,9 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 
 export default function ContentMenu() {
-  const { isOpen } = useNavbar();
+  const { isOpen, setIsOpen } = useNavbar();
   const menues = ["Home", "About", "Projects", "Contact"];
+
   return (
     <motion.div
       animate={isOpen ? "open" : "close"}
@@ -49,6 +50,9 @@ export default function ContentMenu() {
           </motion.h3>
           {menues.map((v, i) => (
             <motion.span
+              onClick={() => {
+                setIsOpen(false);
+              }}
               initial={{
                 x: -40,
                 opacity: 0,
@@ -62,9 +66,9 @@ export default function ContentMenu() {
                 delay: +("0.4" + i + 9),
               }}
               key={i}
-              className="text-gray-100 cursor-pointer text-xl font-semibold"
+              className="text-gray-100 cursor-pointer text-xl font-semibold after:block after:content-[''] after:duration-150 after:mt-1 hover:after:w-full after:w-0 after:mx-auto after:transition-all after:h-[2px] after:bg-white"
             >
-              {v}
+              <a href={`#${v.toLowerCase()}`}>{v}</a>
             </motion.span>
           ))}
         </>

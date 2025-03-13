@@ -1,3 +1,4 @@
+import Aboutme from "@/components/Aboutme";
 import Container from "@/components/Container";
 import MainPage from "@/components/MainPage";
 
@@ -7,7 +8,9 @@ export default function HomePage() {
       <Container id="home">
         <MainPage />
       </Container>
-      <Container id="about">o</Container>
+      <Container id="about">
+        <Aboutme />
+      </Container>
     </>
   );
 }

@@ -3,21 +3,22 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavbar } from "@/store/NavbarStore";
+import ShellSection from "./ShellSection";
 
+export const variantsText: Variants = {
+  show: {
+    x: 0,
+    opacity: 1,
+  },
+  hide: {
+    x: -40,
+    opacity: 0,
+  },
+};
 export default function MainPage() {
   const { gapFromTop } = useNavbar();
   const [isShow, setIsShow] = useState(gapFromTop >= 0 && gapFromTop <= 570);
 
-  const variantsText: Variants = {
-    show: {
-      x: 0,
-      opacity: 1,
-    },
-    hide: {
-      x: -40,
-      opacity: 0,
-    },
-  };
   useEffect(() => {
     if (gapFromTop > 570) {
       setIsShow(false);
@@ -27,7 +28,7 @@ export default function MainPage() {
   }, [gapFromTop]);
 
   return (
-    <div className="grid -mt-8 md:mt-0 grid-cols-1 md:grid-cols-[55%_1fr] lg:grid-cols-[65%_1fr] z-50 gap-x-4 w-[100%]">
+    <ShellSection>
       <div className="flex flex-col text-center md:text-start justify-center gap-y-4 md:gap-y-6 md:pe-8 lg:pe-20">
         <motion.h4
           initial={{
@@ -94,7 +95,7 @@ export default function MainPage() {
           className="flex mx-auto md:mx-0 items-center gap-x-4"
         >
           <a href="#about">
-            <button className="text-gray-100 mx-auto md:mx-0 transition-all hover:bg-slate-900 hover:text-white duration-150 hover:border-transparent bg-slate-900 cursor-pointer rounded-2xl w-[8rem] md:w-[10rem] py-2">
+            <button className="text-gray-100 mx-auto md:mx-0 text-base md:text-lg bg-slate-900 cursor-pointer rounded-2xl w-[8rem] md:w-[10rem] py-2">
               Contact Me
             </button>
           </a>
@@ -127,6 +128,6 @@ export default function MainPage() {
           className="md:rounded-xl h-[250px] rounded-full object-cover aspect-square md:aspect-auto md:h-auto shadow-md w-[250px] md:w-[300px] lg:w-auto"
         />
       </motion.div>
-    </div>
+    </ShellSection>
   );
 }

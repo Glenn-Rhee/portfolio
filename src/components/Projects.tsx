@@ -10,7 +10,7 @@ export default function Projects() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 570) {
+      if (window.scrollY > 1300 && window.scrollY <= 1900) {
         setIsShow(true);
       } else {
         setIsShow(false);

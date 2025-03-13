@@ -14,16 +14,15 @@ export default function Navbar() {
     const handleScroll = () => {
       setGapFromTop(window.scrollY);
     };
-
+    setGapFromTop(window.scrollY);
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [setGapFromTop]);
 
-  console.log(gapFromTop);
   return (
     <>
-      <nav className="h-18 lg:h-20 px-10 md:px-16 lg:px-32 fixed top-0 z-30 right-0 left-0 flex items-center justify-between lg:justify-self-start w-screen bg-transparent shadow-[0_1px_8px_0_rgba(100,120,255,0.1)] backdrop-blur-[7px]">
+      <nav className="h-18 z-[70] lg:h-20 px-10 md:px-16 lg:px-32 fixed top-0 right-0 left-0 flex items-center justify-between lg:justify-self-start w-screen bg-transparent shadow-[0_1px_8px_0_rgba(100,120,255,0.1)] backdrop-blur-[7px]">
         <motion.h1
           animate={isOpen ? "open" : "close"}
           variants={{
@@ -37,7 +36,7 @@ export default function Navbar() {
           transition={{
             delay: isOpen ? 0.3 : 0,
           }}
-          className="relative z-10 text-black-primary text-2xl font-semibold tracking-wider"
+          className="relative z-50 text-black-primary text-2xl font-semibold tracking-wider"
         >
           Ariel
         </motion.h1>
@@ -74,7 +73,7 @@ export default function Navbar() {
               behavior: "smooth",
             });
           }}
-          className="w-12 h-12 cursor-pointer z-50 active:bg-slate-900 transition-all duration-200 aspect-square fixed bottom-5 right-5 flex items-center justify-center rounded-full bg-slate-800 text-gray-100 font-semibold"
+          className="w-12 h-12 cursor-pointer z-40 active:bg-slate-900 transition-all duration-200 aspect-square fixed bottom-5 right-5 flex items-center justify-center rounded-full bg-slate-800 text-gray-100 font-semibold"
         >
           <ChevronUp color="#ffffff" size={24} />
         </button>

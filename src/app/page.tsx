@@ -15,6 +15,7 @@ export default function HomePage() {
       <Container id="projects">
         <Projects />
       </Container>
+      <Container id="contact">contect</Container>
     </>
   );
 }

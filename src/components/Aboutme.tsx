@@ -11,7 +11,7 @@ export default function Aboutme() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 570) {
+      if (window.scrollY > 570 && window.scrollY <= 1300) {
         setIsShow(true);
       } else {
         setIsShow(false);

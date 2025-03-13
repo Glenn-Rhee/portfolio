@@ -14,7 +14,7 @@ export default function ContentMenu() {
     {
       title: "About",
       min: 570,
-      max: 1900,
+      max: 1300,
     },
     {
       title: "Projects",
@@ -25,6 +25,7 @@ export default function ContentMenu() {
       title: "Contact",
     },
   ];
+  console.log(gapFromTop);
 
   return (
     <motion.div
@@ -87,9 +88,9 @@ export default function ContentMenu() {
               key={i}
               className={clsx(
                 "text-gray-100 cursor-pointer text-xl font-semibold after:block after:content-[''] after:duration-150 after:mt-1 hover:after:w-full after:w-0 after:mx-auto after:transition-all after:h-[2px] after:bg-white",
-                {
-                  "after:w-full": gapFromTop > v.min! && gapFromTop <= v.max!,
-                }
+                gapFromTop > v.min! && gapFromTop <= v.max!
+                  ? "after:w-full"
+                  : "after:w-0"
               )}
             >
               <a href={`#${v.title.toLowerCase()}`}>{v.title}</a>

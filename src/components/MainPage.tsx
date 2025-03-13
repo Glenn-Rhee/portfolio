@@ -93,12 +93,16 @@ export default function MainPage() {
           }}
           className="flex mx-auto md:mx-0 items-center gap-x-4"
         >
-          <button className="text-gray-100 mx-auto md:mx-0 transition-all hover:bg-slate-900 hover:text-white duration-150 hover:border-transparent bg-slate-900 cursor-pointer rounded-2xl w-[8rem] md:w-[10rem] py-2">
-            Contact Me
-          </button>
-          <button className="text-slate-900 mx-auto md:mx-0 transition-all hover:bg-slate-900 hover:text-white duration-150 hover:border-transparent bg-transparent cursor-pointer border-2 border-slate-700 rounded-2xl w-[8rem] md:w-[10rem] py-2">
-            Download CV
-          </button>
+          <a href="#about">
+            <button className="text-gray-100 mx-auto md:mx-0 transition-all hover:bg-slate-900 hover:text-white duration-150 hover:border-transparent bg-slate-900 cursor-pointer rounded-2xl w-[8rem] md:w-[10rem] py-2">
+              Contact Me
+            </button>
+          </a>
+          <a href="/CV.pdf" download={"Ariel-Rizki-CV.pdf"}>
+            <button className="text-slate-900 mx-auto md:mx-0 transition-all hover:bg-slate-900 hover:text-white duration-150 hover:border-transparent bg-transparent cursor-pointer border-2 border-slate-700 rounded-2xl w-[8rem] md:w-[10rem] py-2">
+              Download CV
+            </button>
+          </a>
         </motion.div>
       </div>
       <motion.div

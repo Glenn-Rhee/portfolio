@@ -9,42 +9,35 @@ export default function ContentMenu() {
   return (
     <motion.div
       animate={isOpen ? "open" : "close"}
+      initial={{
+        top: 0,
+        right: 0,
+        bottom: 0,
+        height: "100vh",
+        x: "100vh",
+      }}
       variants={{
         open: {
+          x: 0,
           width: "100vw",
-          height: "100vh",
           opacity: 0.9,
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          borderRadius: 0,
-        },
-        close: {
-          top: 0,
-          bottom: 0,
-          right: 0,
-          opacity: 0.9,
-          width: 0,
-          height: 0,
         },
       }}
       transition={{
-        duration: 0.5,
+        duration: 0.3,
       }}
       className="flex flex-col gap-y-4 fixed justify-center items-center bg-slate-600 lg:hidden"
     >
       {isOpen ? (
         <>
           <motion.h3
-            animate={["open", "opened"]}
-            variants={{
-              open: {
-                x: -100,
-              },
-              opened: {
-                x: 0,
-              },
+            initial={{
+              x: -40,
+              opacity: 0,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
             }}
             transition={{
               duration: 0.3,
@@ -55,12 +48,24 @@ export default function ContentMenu() {
             Menu
           </motion.h3>
           {menues.map((v, i) => (
-            <span
+            <motion.span
+              initial={{
+                x: -40,
+                opacity: 0,
+              }}
+              animate={{
+                x: 0,
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.3,
+                delay: +("0.4" + i + 9),
+              }}
               key={i}
               className="text-gray-100 cursor-pointer text-xl font-semibold"
             >
               {v}
-            </span>
+            </motion.span>
           ))}
         </>
       ) : null}

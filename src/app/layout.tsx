@@ -15,7 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Ariel | Portfolio",
-  description: "My name is Ariel, I'm passionate about fullstack web developer. I'm currently studying at Gunadarma University.",
+  description:
+    "My name is Ariel, I'm passionate about fullstack web developer. I'm currently studying at Gunadarma University.",
 };
 
 export default function RootLayout({
@@ -24,9 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} overflow-hidden antialiased bg-gray-200`}
+        className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden antialiased bg-gray-200`}
       >
         <Navbar />
         {children}

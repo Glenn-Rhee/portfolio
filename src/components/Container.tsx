@@ -12,7 +12,7 @@ export default function Container(props: ContainerProps) {
     <div
       id={id}
       className={clsx(
-        "h-screen w-screen flex items-center justify-center pt-0 md:pt-16 lg:pt-20 px-10 md:px-16 lg:px-32 relative z-10",
+        "h-screen w-screen flex items-center justify-center pt-0 md:pt-16 lg:pt-20 px-4 md:px-16 lg:px-32 relative z-10",
         className
       )}
     >

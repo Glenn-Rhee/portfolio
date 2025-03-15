@@ -56,7 +56,7 @@ export default function Navbar() {
               <FolderOpenDot size={24} color="oklch(0.208 0.042 265.755)" />
             </a>
           </ItemNavbar>
-          <ItemNavbar>
+          <ItemNavbar isActive={gapFromTop > 1900}>
             <a href="#contact">
               <Mail size={24} color="oklch(0.208 0.042 265.755)" />
             </a>

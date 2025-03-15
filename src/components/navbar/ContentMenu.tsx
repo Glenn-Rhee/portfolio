@@ -23,6 +23,8 @@ export default function ContentMenu() {
     },
     {
       title: "Contact",
+      min: 1900,
+      max: 2500,
     },
   ];
   console.log(gapFromTop);

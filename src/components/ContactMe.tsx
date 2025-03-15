@@ -1,8 +1,13 @@
+"use client";
 import { Mail } from "lucide-react";
 import ShellSection from "./ShellSection";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { variantsText } from "./MainPage";
+import { useEffect, useState } from "react";
 
 export default function ContactMe() {
+  const [isShow, setIsShow] = useState(true);
   const contacts = [
     {
       icon: <Mail size={35} color="#f3f4f6" />,
@@ -44,34 +49,148 @@ export default function ContactMe() {
     },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 1900) {
+        setIsShow(true);
+      } else {
+        setIsShow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <ShellSection>
       <div className="flex flex-col text-center md:text-start justify-center gap-y-4 md:gap-y-6 md:pe-8 lg:pe-20">
-        <h2 className="lg:text-8xl hidden md:block md:text-6xl md:-m-1 font-bold text-black-primary">
+        <motion.h2
+          initial={{
+            x: -40,
+            opacity: 0,
+          }}
+          variants={variantsText}
+          animate={isShow ? "show" : "hide"}
+          transition={{
+            duration: 0.4,
+            ease: "easeOut",
+            delay: 0,
+          }}
+          className="lg:text-8xl hidden md:block md:text-6xl md:-m-1 font-bold text-black-primary"
+        >
           Get In Touch
-        </h2>
+        </motion.h2>
         <div className="flex flex-col justify-start mx-auto md:mx-0 gap-y-2 md:gap-y-3 mt-3 md:mt-0">
-          <div className="w-28 h-[4px] bg-slate-800 rounded-lg" />
-          <div className="w-28 h-[4px] bg-slate-800 rounded-lg md:ms-10 lg:ms-12 ms-8" />
+          <motion.div
+            initial={{
+              x: -40,
+              opacity: 0,
+            }}
+            variants={variantsText}
+            animate={isShow ? "show" : "hide"}
+            transition={{
+              duration: 0.4,
+              ease: "easeOut",
+              delay: 0.2,
+            }}
+            className="w-28 h-[4px] bg-slate-800 rounded-lg"
+          />
+          <motion.div
+            initial={{
+              x: -40,
+              opacity: 0,
+            }}
+            variants={variantsText}
+            animate={isShow ? "show" : "hide"}
+            transition={{
+              duration: 0.4,
+              ease: "easeOut",
+              delay: 0.3,
+            }}
+            className="w-28 h-[4px] bg-slate-800 rounded-lg md:ms-10 lg:ms-12 ms-8"
+          />
         </div>
-        <span className="text-sm md:text-xl text-gray-600">
+        <motion.span
+          initial={{
+            x: -40,
+            opacity: 0,
+          }}
+          variants={variantsText}
+          animate={isShow ? "show" : "hide"}
+          transition={{
+            duration: 0.4,
+            ease: "easeOut",
+            delay: 0.5,
+          }}
+          className="text-sm md:text-xl text-gray-600"
+        >
           Feel free to contact me if you have any question.
-        </span>
-        <span className="text-sm md:text-xl text-gray-600">
+        </motion.span>
+        <motion.span
+          initial={{
+            x: -40,
+            opacity: 0,
+          }}
+          variants={variantsText}
+          animate={isShow ? "show" : "hide"}
+          transition={{
+            duration: 0.4,
+            ease: "easeOut",
+            delay: 0.6,
+          }}
+          className="text-sm md:text-xl text-gray-600"
+        >
           arielrizki.fs1@gmail.com
-        </span>
-        <div className="flex items-center gap-x-4 mx-auto md:mx-0">
+        </motion.span>
+        <div className="flex overflow-hidden items-center justify-center w-full gap-x-4 mx-auto md:mx-0">
           {contacts.map((v, i) => (
-            <div
+            <motion.div
+              initial={{
+                y: 80,
+                opacity: 0,
+              }}
+              variants={{
+                show: {
+                  y: 0,
+                  opacity: 1,
+                },
+                hide: {
+                  y: 80,
+                  opacity: 0,
+                },
+              }}
+              animate={isShow ? "show" : "hide"}
+              transition={{
+                duration: 0.4,
+                ease: "easeOut",
+                delay: 0.7 + +("0." + i + 1),
+              }}
               key={i}
-              className="h-14 w-14 md:h-16 md:w-16 bg-slate-800 flex items-center justify-center rounded-full"
+              className="h-14 aspect-square w-14 md:h-16 md:w-16 bg-slate-800 flex items-center justify-center rounded-full"
             >
               {v.icon}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-      <div className="relative row-start-1 w-fit mx-auto md:row-start-auto">
+      <motion.div
+        initial={{
+          x: -40,
+          opacity: 0,
+        }}
+        variants={variantsText}
+        animate={isShow ? "show" : "hide"}
+        transition={{
+          duration: 0.4,
+          ease: "easeOut",
+          delay: 0.1,
+        }}
+        className="relative row-start-1 w-fit mx-auto md:row-start-auto"
+      >
         <Image
           src={"/pict-1.jpg"}
           width={400}
@@ -84,7 +203,7 @@ export default function ContactMe() {
             Get In Touch
           </h2>
         </div>
-      </div>
+      </motion.div>
     </ShellSection>
   );
 }

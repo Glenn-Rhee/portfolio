@@ -4,8 +4,9 @@ import clsx from "clsx";
 interface ContainerProps {
   children: React.ReactNode;
   className?: string;
-  id: string;
+  id?: string;
 }
+
 export default function Container(props: ContainerProps) {
   const { children, className, id } = props;
   return (

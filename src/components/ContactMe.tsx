@@ -11,6 +11,7 @@ export default function ContactMe() {
   const contacts = [
     {
       icon: <Mail size={35} color="#f3f4f6" />,
+      href: "mailto:arielrizki.fs1@gmail.com",
     },
     {
       icon: (
@@ -21,6 +22,7 @@ export default function ContactMe() {
           alt="Github Icon"
         />
       ),
+      href: "https://github.com/Glenn-Rhee",
     },
     {
       icon: (
@@ -31,6 +33,7 @@ export default function ContactMe() {
           alt="Instagram Icon"
         />
       ),
+      href: "https://www.instagram.com/aaarrl.r/",
     },
     {
       icon: (
@@ -146,9 +149,9 @@ export default function ContactMe() {
         >
           arielrizki.fs1@gmail.com
         </motion.span>
-        <div className="flex overflow-hidden items-center justify-center w-full gap-x-4 mx-auto md:mx-0">
+        <div className="flex overflow-hidden items-center justify-center md:justify-start w-full gap-x-4 mx-auto md:mx-0">
           {contacts.map((v, i) => (
-            <motion.div
+            <motion.a
               initial={{
                 y: 80,
                 opacity: 0,
@@ -157,23 +160,30 @@ export default function ContactMe() {
                 show: {
                   y: 0,
                   opacity: 1,
+                  transition: {
+                    duration: 0.4,
+                    delay: 0.7 + +("0." + i + 1),
+                  },
                 },
                 hide: {
                   y: 80,
                   opacity: 0,
+                  transition: {
+                    delay: 0,
+                  },
                 },
               }}
               animate={isShow ? "show" : "hide"}
               transition={{
-                duration: 0.4,
                 ease: "easeOut",
-                delay: 0.7 + +("0." + i + 1),
               }}
+              href={v.href}
               key={i}
-              className="h-14 aspect-square w-14 md:h-16 md:w-16 bg-slate-800 flex items-center justify-center rounded-full"
             >
-              {v.icon}
-            </motion.div>
+              <button className="h-14 cursor-pointer hover:bg-slate-700 active:bg-slate-900 transition-all duration-200 aspect-square w-14 md:h-16 md:w-16 bg-slate-800 flex items-center justify-center rounded-full">
+                {v.icon}
+              </button>
+            </motion.a>
           ))}
         </div>
       </div>

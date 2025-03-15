@@ -44,11 +44,7 @@ export default function ContactMe() {
           alt="Linked in Icon"
         />
       ),
-    },
-    {
-      icon: (
-        <Image src={"/discord.png"} width={42} height={42} alt="Discord Icon" />
-      ),
+      href: "https://www.linkedin.com/in/ariel-rizki-21b032287/",
     },
   ];
 
@@ -152,6 +148,7 @@ export default function ContactMe() {
         <div className="flex overflow-hidden items-center justify-center md:justify-start w-full gap-x-4 mx-auto md:mx-0">
           {contacts.map((v, i) => (
             <motion.a
+              target="_blank"
               initial={{
                 y: 80,
                 opacity: 0,

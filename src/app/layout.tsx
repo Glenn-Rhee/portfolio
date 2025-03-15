@@ -11,6 +11,13 @@ const geistPoppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Ariel | Portfolio",
+  keywords: [
+    "ariel rizki",
+    "ariel portfolio",
+    "ariel rizki portfolio",
+    "ariel rizki muhtamad bakri",
+  ],
+  robots: "index, follow",
   description:
     "My name is Ariel, I'm passionate about fullstack web developer. I'm currently studying at Gunadarma University.",
 };

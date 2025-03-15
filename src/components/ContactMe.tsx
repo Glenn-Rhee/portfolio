@@ -177,7 +177,7 @@ export default function ContactMe() {
               href={v.href}
               key={i}
             >
-              <button className="h-14 cursor-pointer hover:bg-slate-700 active:bg-slate-900 transition-all duration-200 aspect-square w-14 md:h-16 md:w-16 bg-slate-800 flex items-center justify-center rounded-full">
+              <button className="h-13 w-13 cursor-pointer hover:bg-slate-700 active:bg-slate-900 transition-all duration-200 aspect-square p-1 md:h-16 md:w-16 bg-slate-800 flex items-center justify-center rounded-full">
                 {v.icon}
               </button>
             </motion.a>

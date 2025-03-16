@@ -1,14 +1,27 @@
 "use client";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 interface ContainerProps {
   children: React.ReactNode;
   className?: string;
   id?: string;
+  to?: number | undefined;
 }
 
 export default function Container(props: ContainerProps) {
-  const { children, className, id } = props;
+  const { children, className, id, to } = props;
+  const pathName = usePathname();
+
+  useEffect(() => {
+    if (to && pathName === "/") {
+      window.scrollTo({
+        behavior: "smooth",
+        top: to,
+      });
+    }
+  }, [pathName, to]);
   return (
     <div
       id={id}

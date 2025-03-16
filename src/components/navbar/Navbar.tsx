@@ -6,9 +6,25 @@ import ContentMenu from "./ContentMenu";
 import { useNavbar } from "@/store/NavbarStore";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Navbar() {
+  const router = useRouter();
+  const pathname = usePathname();
   const { isOpen, gapFromTop, setGapFromTop } = useNavbar();
+
+  function goToElement(top: number) {
+    if (pathname !== "/") {
+      router.push("/?to=" + top);
+    }
+
+    if (pathname === "/") {
+      window.scrollTo({
+        behavior: "smooth",
+        top,
+      });
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,23 +57,58 @@ export default function Navbar() {
           Ariel
         </motion.h1>
         <ul className="lg:flex hidden items-center justify-evenly gap-x-14 min-w-[70%] mx-auto ms-80">
-          <ItemNavbar isActive={gapFromTop >= 0 && gapFromTop <= 570}>
-            <a href="#home">
+          <ItemNavbar
+            isActive={pathname === "/" && gapFromTop >= 0 && gapFromTop <= 570}
+          >
+            <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                goToElement(0);
+              }}
+            >
               <House size={24} color="oklch(0.208 0.042 265.755)" />
             </a>
           </ItemNavbar>
-          <ItemNavbar isActive={gapFromTop > 570 && gapFromTop <= 1300}>
-            <a href="#about">
+          <ItemNavbar
+            isActive={
+              (gapFromTop > 570 && gapFromTop <= 1300) || pathname === "/about"
+            }
+          >
+            <a
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                goToElement(900);
+              }}
+            >
               <UserRound size={24} color="oklch(0.208 0.042 265.755)" />
             </a>
           </ItemNavbar>
-          <ItemNavbar isActive={gapFromTop > 1300 && gapFromTop <= 1900}>
-            <a href="#projects">
+          <ItemNavbar
+            isActive={
+              (gapFromTop > 1300 && gapFromTop <= 1900) ||
+              pathname === "/projects"
+            }
+          >
+            <a
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                goToElement(1750);
+              }}
+            >
               <FolderOpenDot size={24} color="oklch(0.208 0.042 265.755)" />
             </a>
           </ItemNavbar>
           <ItemNavbar isActive={gapFromTop > 1900}>
-            <a href="#contact">
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                goToElement(2750);
+              }}
+            >
               <Mail size={24} color="oklch(0.208 0.042 265.755)" />
             </a>
           </ItemNavbar>

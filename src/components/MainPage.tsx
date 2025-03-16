@@ -29,7 +29,7 @@ export default function MainPage() {
 
   return (
     <ShellSection>
-      <div className="flex flex-col text-center md:text-start justify-center gap-y-4 md:gap-y-6 md:pe-8 lg:pe-20">
+      <div  className="flex flex-col text-center md:text-start justify-center gap-y-4 md:gap-y-6 md:pe-8 lg:pe-20">
         <motion.h4
           initial={{
             x: -40,

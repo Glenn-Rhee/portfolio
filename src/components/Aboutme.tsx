@@ -90,7 +90,7 @@ export default function Aboutme() {
         >
           A brief introduction about me and my interest.
         </motion.span>
-        <Link href={"/aboutme"}>
+        <Link href={"/about"}>
           <motion.button
             initial={{
               y: 40,

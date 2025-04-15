@@ -11,7 +11,16 @@ export default async function HomePage(props: { searchParams: SearchParams }) {
 
   return (
     <>
-      <Container id="home" to={params.to ? +params.to : undefined}>
+      <Container
+        id="home"
+        to={
+          params.to
+            ? /^\d+$/.test(params.to)
+              ? +params.to
+              : params.to
+            : undefined
+        }
+      >
         <MainPage />
       </Container>
       <Container id="about">

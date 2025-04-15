@@ -13,12 +13,12 @@ export default function Navbar() {
   const pathname = usePathname();
   const { isOpen, gapFromTop, setGapFromTop } = useNavbar();
 
-  function goToElement(top: number) {
+  function goToElement(top: number | string) {
     if (pathname !== "/") {
       router.push("/?to=" + top);
     }
 
-    if (pathname === "/") {
+    if (pathname === "/" && typeof top === "number") {
       window.scrollTo({
         behavior: "smooth",
         top,
@@ -79,10 +79,14 @@ export default function Navbar() {
               href="#about"
               onClick={(e) => {
                 e.preventDefault();
-                const element = document.querySelector(
-                  "#about"
-                ) as HTMLDivElement;
-                goToElement(element.offsetTop);
+                if (pathname === "/") {
+                  const element = document.querySelector(
+                    "#about"
+                  ) as HTMLDivElement;
+                  goToElement(element.offsetTop);
+                } else {
+                  goToElement("about");
+                }
               }}
             >
               <UserRound size={24} color="oklch(0.208 0.042 265.755)" />
@@ -98,10 +102,14 @@ export default function Navbar() {
               href="#projects"
               onClick={(e) => {
                 e.preventDefault();
-                const element = document.querySelector(
-                  "#projects"
-                ) as HTMLDivElement;
-                goToElement(element.offsetTop);
+                if (pathname === "/") {
+                  const element = document.querySelector(
+                    "#projects"
+                  ) as HTMLDivElement;
+                  goToElement(element.offsetTop);
+                } else {
+                  goToElement("projects");
+                }
               }}
             >
               <FolderOpenDot size={24} color="oklch(0.208 0.042 265.755)" />

@@ -7,7 +7,7 @@ interface ContainerProps {
   children: React.ReactNode;
   className?: string;
   id?: string;
-  to?: number | undefined;
+  to?: number | string | undefined;
 }
 
 export default function Container(props: ContainerProps) {
@@ -15,11 +15,20 @@ export default function Container(props: ContainerProps) {
   const pathName = usePathname();
 
   useEffect(() => {
-    if (to && pathName === "/") {
+    if (to && typeof to === "number" && pathName === "/") {
       window.scrollTo({
         behavior: "smooth",
         top: to,
       });
+    }
+
+    if (to && typeof to === "string" && pathName === "/") {
+      const element = document.getElementById(to) as HTMLDivElement | null;
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
     }
   }, [pathName, to]);
   return (

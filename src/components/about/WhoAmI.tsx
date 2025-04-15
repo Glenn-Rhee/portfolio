@@ -9,8 +9,8 @@ export default function WhoAmI() {
       <div className="grid grid-cols-1 w-full md:grid-cols-2">
         <div className="flex flex-col text-center md:text-start justify-center gap-y-4 md:gap-y-6 md:pe-8 lg:pe-20">
           <div className="w-full flex">
-            <div className="grid grid-cols-2 gap-x-4">
-              <div className="flex flex-col gap-y-4">
+            <div className="grid grid-cols-2 gap-x-4 mx-auto">
+              <div className="flex flex-col gap-y-4 place-items-center">
                 <Image
                   src={"/pict-1.jpg"}
                   alt="Ariel picture"
@@ -39,10 +39,10 @@ export default function WhoAmI() {
           </div>
         </div>
         <div className="w-full px-10 mt-8 md:mt-0 flex flex-col justify-center">
-          <span className="text-slate-700 font-bold text-2xl lg:text-4xl">
+          <span className="text-black-primary font-bold text-2xl lg:text-4xl">
             Ariel Rizki Muhtamad Bakri
           </span>
-          <p className="text-justify mt-3 text-sm text-slate-600 md:text-lg">
+          <p className="text-justify mt-3 text-md text-slate-600 md:text-lg">
             Hallo, I’m Ariel Rizki Muhtamad Bakri, a tech enthusiast and
             aspiring Web Developer. Originating from Jakarta, Indonesia, I’m
             currently embarking on a fascinating journey at Gunadarma

@@ -67,7 +67,7 @@ export default function WhoAmI() {
                     alt="Ariel picture"
                     width={200}
                     height={200}
-                    className="aspect-square object-cover shadow rounded-lg"
+                    className="aspect-square w-[150px] md:w-[200px] object-cover shadow rounded-lg"
                   />
                 </motion.div>
                 <motion.div
@@ -97,7 +97,7 @@ export default function WhoAmI() {
                     alt="Ariel picture"
                     width={200}
                     height={200}
-                    className="object-cover shadow rounded-lg"
+                    className="object-cover w-[150px] md:w-[200px] shadow rounded-lg"
                   />
                 </motion.div>
               </div>
@@ -129,7 +129,7 @@ export default function WhoAmI() {
                     alt="Ariel picture"
                     width={200}
                     height={200}
-                    className="object-cover shadow rounded-lg"
+                    className="object-cover w-[150px] md:w-[200px] shadow rounded-lg"
                   />
                 </motion.div>
               </div>

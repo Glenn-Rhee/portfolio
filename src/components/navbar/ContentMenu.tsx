@@ -2,9 +2,12 @@
 import { useNavbar } from "@/store/NavbarStore";
 import clsx from "clsx";
 import { motion } from "framer-motion";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function ContentMenu() {
   const { isOpen, setIsOpen, gapFromTop } = useNavbar();
+  const pathName = usePathname();
+  const router = useRouter();
   const menues = [
     {
       title: "Home",
@@ -27,7 +30,6 @@ export default function ContentMenu() {
       max: 2500,
     },
   ];
-  console.log(gapFromTop);
 
   return (
     <motion.div
@@ -95,7 +97,34 @@ export default function ContentMenu() {
                   : "after:w-0"
               )}
             >
-              <a href={`#${v.title.toLowerCase()}`}>{v.title}</a>
+              <a
+                href={`#${v.title.toLowerCase()}`}
+                onClick={(e) => {
+                  setIsOpen(false);
+                  e.preventDefault();
+                  const scrollTo =
+                    i === 0
+                      ? v.min
+                      : i === menues.length - 1
+                      ? v.max - 50
+                      : v.min + 300;
+                  const tes = document.querySelector(
+                    "#" + v.title.toLowerCase()
+                  ) as HTMLDivElement;
+                  if (pathName !== "/") {
+                    router.push("/?to=" + scrollTo);
+                  }
+
+                  if (pathName === "/") {
+                    window.scrollTo({
+                      behavior: "smooth",
+                      top: tes.offsetTop,
+                    });
+                  }
+                }}
+              >
+                {v.title}
+              </a>
             </motion.span>
           ))}
         </>

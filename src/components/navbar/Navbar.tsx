@@ -79,7 +79,10 @@ export default function Navbar() {
               href="#about"
               onClick={(e) => {
                 e.preventDefault();
-                goToElement(900);
+                const element = document.querySelector(
+                  "#about"
+                ) as HTMLDivElement;
+                goToElement(element.offsetTop);
               }}
             >
               <UserRound size={24} color="oklch(0.208 0.042 265.755)" />
@@ -95,7 +98,10 @@ export default function Navbar() {
               href="#projects"
               onClick={(e) => {
                 e.preventDefault();
-                goToElement(1750);
+                const element = document.querySelector(
+                  "#projects"
+                ) as HTMLDivElement;
+                goToElement(element.offsetTop);
               }}
             >
               <FolderOpenDot size={24} color="oklch(0.208 0.042 265.755)" />

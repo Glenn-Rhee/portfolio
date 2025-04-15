@@ -1,6 +1,22 @@
+"use client";
+import { motion } from "framer-motion";
+import { variantsText } from "../MainPage";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useNavbar } from "@/store/NavbarStore";
 
 export default function Skills() {
+  const { gapFromTop } = useNavbar();
+  const [isShow, setIsShow] = useState(gapFromTop > 570 && gapFromTop <= 1300);
+
+  useEffect(() => {
+    if (gapFromTop > 570 && gapFromTop <= 1300) {
+      setIsShow(true);
+    } else {
+      setIsShow(false);
+    }
+  }, [gapFromTop]);
+
   const skills = [
     {
       name: "Frontend Development",
@@ -23,11 +39,25 @@ export default function Skills() {
       iconAlt: "Testing & Debugging icon",
     },
   ];
+
   return (
     <div className="w-full flex mt-40 md:mt-16 flex-col items-center gap-y-28 justify-center">
       {/* Skills & Expertise */}
       <div className="flex mx-auto flex-col gap-y-3">
-        <div className="space-y-3 text-center">
+        <motion.div
+          initial={{
+            x: -40,
+            opacity: 0,
+          }}
+          variants={variantsText}
+          animate={isShow ? "show" : "hide"}
+          transition={{
+            duration: 0.4,
+            ease: "easeOut",
+            delay: 0,
+          }}
+          className="space-y-3 text-center"
+        >
           <h4 className="font-bold text-black-primary text-xl md:text-2xl lg:text-3xl">
             Skills and Expertise
           </h4>
@@ -35,10 +65,23 @@ export default function Skills() {
             Explore some skills I&apos;m proficient in to deliver high-quality
             solutions.
           </span>
-        </div>
+        </motion.div>
 
         {/* Items skills */}
-        <div className="grid grid-cols-2 gap-y-10 md:grid-cols-3 lg:grid-cols-4 gap-x-20 w-full mt-8">
+        <motion.div
+          initial={{
+            x: -40,
+            opacity: 0,
+          }}
+          variants={variantsText}
+          animate={isShow ? "show" : "hide"}
+          transition={{
+            duration: 0.4,
+            ease: "easeOut",
+            delay: 0.2,
+          }}
+          className="grid grid-cols-2 gap-y-10 md:grid-cols-3 lg:grid-cols-4 gap-x-20 w-full mt-8"
+        >
           {skills.map((skill, i) => (
             <div key={i} className="flex  items-center flex-col">
               <Image
@@ -53,12 +96,25 @@ export default function Skills() {
               </span>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Language & Frameworks */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className="space-y-4 flex flex-col items-center">
+        <motion.div
+          initial={{
+            x: -40,
+            opacity: 0,
+          }}
+          variants={variantsText}
+          animate={isShow ? "show" : "hide"}
+          transition={{
+            duration: 0.4,
+            ease: "easeOut",
+            delay: 0.3,
+          }}
+          className="space-y-4 flex flex-col items-center"
+        >
           <h5 className="uppercase text-center text-lg md:text-xl lg:text-xl text-black-primary tracking-[0.4em]">
             Language & Framework
           </h5>
@@ -77,8 +133,30 @@ export default function Skills() {
             <span className="font-bold text-black-primary"> MongoDB</span> |
             firebase | Golang | PHP
           </span>
-        </div>
-        <div className="space-y-4 flex flex-col items-center">
+        </motion.div>
+        <motion.div
+          initial={{
+            x: 40,
+            opacity: 0,
+          }}
+          variants={{
+            show: {
+              x: 0,
+              opacity: 1,
+            },
+            hide: {
+              x: 40,
+              opacity: 0,
+            },
+          }}
+          animate={isShow ? "show" : "hide"}
+          transition={{
+            duration: 0.4,
+            ease: "easeOut",
+            delay: 0.4,
+          }}
+          className="space-y-4 flex flex-col items-center"
+        >
           <h5 className="uppercase text-center text-lg md:text-xl lg:text-xl text-black-primary tracking-[0.4em]">
             Tools
           </h5>
@@ -87,7 +165,7 @@ export default function Skills() {
             <span className="text-slate-800 font-semibold">Figma</span> |
             Postman
           </span>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

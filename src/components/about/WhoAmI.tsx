@@ -129,14 +129,14 @@ export default function WhoAmI() {
                     alt="Ariel picture"
                     width={200}
                     height={200}
-                    className="object-cover w-[150px] md:w-[200px] shadow rounded-lg"
+                    className="object-cover w-[150px] shadow rounded-lg"
                   />
                 </motion.div>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-full px-10 mt-8 md:mt-0 flex flex-col justify-center">
+        <div className="w-full px-4 md:px-10 mt-8 md:mt-0 flex flex-col justify-center">
           <motion.span
             initial={{
               x: -40,

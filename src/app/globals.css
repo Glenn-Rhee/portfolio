@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+::selection {
+  background-color: var(--color-slate-600);
+  color: white;
+}
+
 @theme {
   --color-black-primary: #121212;
 }

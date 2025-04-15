@@ -41,7 +41,7 @@ export default function Skills() {
   ];
 
   return (
-    <div className="w-full flex mt-40 md:mt-16 flex-col items-center gap-y-28 justify-center">
+    <div className="w-full flex mt-40 md:mt-16 flex-col items-center md:gap-y-24 lg:gap-y-28 gap-y-16 justify-center">
       {/* Skills & Expertise */}
       <div className="flex mx-auto flex-col gap-y-3">
         <motion.div
@@ -118,20 +118,66 @@ export default function Skills() {
           <h5 className="uppercase text-center text-lg md:text-xl lg:text-xl text-black-primary tracking-[0.4em]">
             Language & Framework
           </h5>
-          <span className="font-semibold text-slate-800 text-center">
-            <span className="font-bold text-black-primary">HTML</span> |
-            <span className="font-bold text-black-primary"> CSS</span> |
-            <span className="font-bold text-black-primary"> JavaScript</span> |
-            <span className="font-bold text-black-primary"> Typescript</span> |
-            <span className="font-bold text-black-primary"> ReactJs</span> |
-            <span className="font-bold text-black-primary"> NextJs</span> |
-            <span className="font-bold text-black-primary"> TailwindCSS</span> |
-            <span className="font-bold text-black-primary"> Bootstrap</span> |
-            <span className="font-bold text-black-primary"> NodeJs</span> |
-            <span className="font-bold text-black-primary"> ExpressJs</span> |
-            <span className="font-bold text-black-primary"> MySQL</span> |
-            <span className="font-bold text-black-primary"> MongoDB</span> |
-            firebase | Golang | PHP
+          <span className="md:font-semibold text-slate-800 text-center">
+            <span className="font-semibold md:font-bold text-black-primary">
+              HTML
+            </span>{" "}
+            |
+            <span className="font-semibold md:font-bold text-black-primary">
+              {" "}
+              CSS
+            </span>{" "}
+            |
+            <span className="font-semibold md:font-bold text-black-primary">
+              {" "}
+              JavaScript
+            </span>{" "}
+            |
+            <span className="font-semibold md:font-bold text-black-primary">
+              {" "}
+              Typescript
+            </span>{" "}
+            |
+            <span className="font-semibold md:font-bold text-black-primary">
+              {" "}
+              ReactJs
+            </span>{" "}
+            |
+            <span className="font-semibold md:font-bold text-black-primary">
+              {" "}
+              NextJs
+            </span>{" "}
+            |
+            <span className="font-semibold md:font-bold text-black-primary">
+              {" "}
+              TailwindCSS
+            </span>{" "}
+            |
+            <span className="font-semibold md:font-bold text-black-primary">
+              {" "}
+              Bootstrap
+            </span>{" "}
+            |
+            <span className="font-semibold md:font-bold text-black-primary">
+              {" "}
+              NodeJs
+            </span>{" "}
+            |
+            <span className="font-semibold md:font-bold text-black-primary">
+              {" "}
+              ExpressJs
+            </span>{" "}
+            |
+            <span className="font-semibold md:font-bold text-black-primary">
+              {" "}
+              MySQL
+            </span>{" "}
+            |
+            <span className="font-semibold md:font-bold text-black-primary">
+              {" "}
+              MongoDB
+            </span>{" "}
+            | firebase | Golang | PHP
           </span>
         </motion.div>
         <motion.div
@@ -160,9 +206,9 @@ export default function Skills() {
           <h5 className="uppercase text-center text-lg md:text-xl lg:text-xl text-black-primary tracking-[0.4em]">
             Tools
           </h5>
-          <span className="font-bold text-black-primary text-center">
+          <span className="font-semibold md:font-bold text-black-primary text-center">
             VsCode | Git | Github |{" "}
-            <span className="text-slate-800 font-semibold">Figma</span> |
+            <span className="text-slate-800 font-normal md:font-semibold">Figma</span> |
             Postman
           </span>
         </motion.div>

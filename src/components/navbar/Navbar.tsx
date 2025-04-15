@@ -14,6 +14,7 @@ import { useNavbar } from "@/store/NavbarStore";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import clsx from "clsx";
 
 export default function Navbar() {
   const router = useRouter();
@@ -59,7 +60,12 @@ export default function Navbar() {
           transition={{
             delay: isOpen ? 0.3 : 0,
           }}
-          className="relative z-50 flex items-center gap-x-4 text-black-primary text-2xl font-semibold tracking-wider"
+          className={clsx(
+            "relative z-50 flex items-center gap-x-4 text-black-primary text-2xl font-semibold tracking-wider",
+            {
+              "-ms-6": pathname !== "/",
+            }
+          )}
         >
           {pathname !== "/" ? (
             <button onClick={() => router.back()} className="cursor-pointer">

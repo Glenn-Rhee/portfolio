@@ -1,5 +1,12 @@
 "use client";
-import { ChevronUp, FolderOpenDot, House, Mail, UserRound } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronUp,
+  FolderOpenDot,
+  House,
+  Mail,
+  UserRound,
+} from "lucide-react";
 import ItemNavbar from "./ItemNavbar";
 import HumbergerMenu from "./HumbergerMenu";
 import ContentMenu from "./ContentMenu";
@@ -52,8 +59,13 @@ export default function Navbar() {
           transition={{
             delay: isOpen ? 0.3 : 0,
           }}
-          className="relative z-50 text-black-primary text-2xl font-semibold tracking-wider"
+          className="relative z-50 flex items-center gap-x-4 text-black-primary text-2xl font-semibold tracking-wider"
         >
+          {pathname !== "/" ? (
+            <button onClick={() => router.back()} className="cursor-pointer">
+              <ChevronLeft size={24} color="oklch(0.208 0.042 265.755)" />
+            </button>
+          ) : null}
           Ariel
         </motion.h1>
         <ul className="lg:flex hidden items-center justify-evenly gap-x-14 min-w-[70%] mx-auto ms-80">

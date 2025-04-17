@@ -92,7 +92,10 @@ export default function ContentMenu() {
               key={i}
               className={clsx(
                 "text-gray-100 cursor-pointer text-xl font-semibold after:block after:content-[''] after:duration-150 after:mt-1 hover:after:w-full after:w-0 after:mx-auto after:transition-all after:h-[2px] after:bg-white",
-                gapFromTop > v.min! && gapFromTop <= v.max!
+                (pathName === "/" &&
+                  gapFromTop > v.min! &&
+                  gapFromTop <= v.max!) ||
+                  pathName === `/${v.title.toLowerCase()}`
                   ? "after:w-full"
                   : "after:w-0"
               )}

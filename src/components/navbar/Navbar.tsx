@@ -90,7 +90,8 @@ export default function Navbar() {
           </ItemNavbar>
           <ItemNavbar
             isActive={
-              (gapFromTop > 570 && gapFromTop <= 1300) || pathname === "/about"
+              (pathname === "/" && gapFromTop > 570 && gapFromTop <= 1300) ||
+              pathname === "/about"
             }
           >
             <a
@@ -112,7 +113,7 @@ export default function Navbar() {
           </ItemNavbar>
           <ItemNavbar
             isActive={
-              (gapFromTop > 1300 && gapFromTop <= 1900) ||
+              (pathname === "/" && gapFromTop > 1300 && gapFromTop <= 1900) ||
               pathname === "/projects"
             }
           >
@@ -133,7 +134,7 @@ export default function Navbar() {
               <FolderOpenDot size={24} color="oklch(0.208 0.042 265.755)" />
             </a>
           </ItemNavbar>
-          <ItemNavbar isActive={gapFromTop > 1900}>
+          <ItemNavbar isActive={pathname === "/" && gapFromTop > 1900}>
             <a
               href="#contact"
               onClick={(e) => {

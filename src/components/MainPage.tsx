@@ -94,7 +94,7 @@ export default function MainPage() {
           }}
           className="flex mx-auto md:mx-0 items-center gap-x-4"
         >
-          <a href="#about">
+          <a href="#contact">
             <button className="text-gray-100 mx-auto md:mx-0 text-base md:text-lg bg-slate-900 cursor-pointer rounded-2xl w-[8rem] md:w-[10rem] py-2">
               Contact Me
             </button>

@@ -2,6 +2,12 @@ import Education from "@/components/about/Education";
 import Skills from "@/components/about/Skills";
 import WhoAmI from "@/components/about/WhoAmI";
 import Container from "@/components/Container";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ariel | About",
+  keywords: ["Tentang Ariel", "Ariel about"],
+};
 
 export default function AboutPage() {
   return (

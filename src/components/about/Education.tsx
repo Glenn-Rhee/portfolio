@@ -19,7 +19,7 @@ export default function Education() {
   }, [gapFromTop]);
 
   return (
-    <div className="mt-40 md:mt-16 w-full">
+    <div className="mt-40 md:mt-16 w-full pb-[5rem]">
       <motion.div
         initial={{
           x: -40,

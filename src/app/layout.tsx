@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
+import Head from "next/head";
 
 const geistPoppins = Poppins({
   variable: "--font-geist-poppins",
@@ -29,6 +30,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Ariel Rizki Muhtamad Bakri" />
+        <link
+          rel="canonical"
+          href="https://portfolio-three-azure-71.vercel.app/"
+        />
+      </Head>
       <body
         className={`${geistPoppins.variable} overflow-x-hidden antialiased bg-gray-200`}
       >

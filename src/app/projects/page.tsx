@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import Highlight from "@/components/projects/Highlight";
+import OtherProject from "@/components/projects/OtherProject";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,6 +13,9 @@ export default function ProjectsPage() {
     <div>
       <Container className="flex-col lg:pt-24 px-2 pt-20 items-start justify-start gap-y-10 md:gap-y-6">
         <Highlight />
+      </Container>
+      <Container id="other" className="flex-col lg:pt-24 px-2 pt-20 items-start justify-start gap-y-10 md:gap-y-6">
+        <OtherProject />
       </Container>
     </div>
   );

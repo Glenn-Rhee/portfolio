@@ -35,7 +35,7 @@ export default function Highlight() {
       >
         Highlight
       </motion.h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-6 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-6 mt-6 w-full">
         <motion.div
           initial={{
             x: -40,

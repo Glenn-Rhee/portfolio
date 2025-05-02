@@ -11,10 +11,13 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <div>
-      <Container className="flex-col lg:pt-24 px-2 pt-20 items-start justify-start gap-y-10 md:gap-y-6">
+      <Container className="flex-col lg:pt-24 pe-10 md:px-2 pt-20 items-start justify-start gap-y-10 md:gap-y-6">
         <Highlight />
       </Container>
-      <Container id="other" className="flex-col lg:pt-24 px-2 pt-20 items-start justify-start gap-y-10 md:gap-y-6">
+      <Container
+        id="other"
+        className="flex-col pe-10 mt-[18rem] lg:pt-24 px-2 pt-20 items-start justify-start gap-y-10 md:gap-y-6"
+      >
         <OtherProject />
       </Container>
     </div>

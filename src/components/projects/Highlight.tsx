@@ -3,28 +3,28 @@ import Image from "next/image";
 export default function Highlight() {
   return (
     <div className="ms-2 md:ms-0 text-black-primary w-full">
-      <h3 className="font-semibold md:font-bold text-xl md:text-2xl lg:text-3xl tracking-widest">
+      <h3 className="font-bold md:text-start text-center text-2xl lg:text-3xl tracking-widest">
         Highlight
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 mt-6 w-full">
-        <div className="flex flex-col gap-y-4 self-center">
+        <div className="flex flex-col gap-y-4 justify-center">
           <Image
             src={"/projects/p-1.jpg"}
             alt="Project 1 Ariel"
             width={500}
             height={500}
-            className="rounded-lg shadow-md"
+            className="rounded-lg shadow-md self-center md:self-start"
           />
           <Image
             src={"/projects/p-2.jpg"}
             alt="Project 1 Ariel"
             width={500}
             height={500}
-            className="rounded-lg shadow-md"
+            className="rounded-lg shadow-md self-center md:self-start"
           />
         </div>
-        <div className="flex flex-col justify-center gap-y-3">
-          <h5 className="text-black-primary font-semibold md:font-bold text-lg md:text-3xl">
+        <div className="flex flex-col justify-center gap-y-3 mt-6 md:mt-4">
+          <h5 className="text-black-primary font-semibold md:font-bold text-xl md:text-3xl">
             Addorama Store
           </h5>
           <p className="text-slate-600 font-medium text-lg text-justify">
@@ -38,10 +38,16 @@ export default function Highlight() {
             system.
           </p>
           <div className="flex items-center gap-x-4">
-            <button className="bg-slate-800 text-white w-22 py-1 transition-all hover:bg-slate-900 duration-150 rounded-lg font-semibold cursor-pointer">
+            <button className="bg-slate-800 text-white w-22 py-1.5 transition-all hover:bg-slate-900 duration-150 rounded-lg font-semibold cursor-pointer">
               More
             </button>
-            <a href="https://addorama.vercel.app/" target="_blank" className="hover:underline">Preview</a>
+            <a
+              href="https://addorama.vercel.app/"
+              target="_blank"
+              className="hover:underline"
+            >
+              Preview
+            </a>
           </div>
         </div>
       </div>

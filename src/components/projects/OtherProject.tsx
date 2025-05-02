@@ -19,7 +19,7 @@ export default function OtherProject() {
     },
     {
       title: "Coffe Shop",
-      desc: "A simple application for ordering coffee. This website uses NextJs, Typescript, Prisma, shadcnUI, and TailwindCss tech.",
+      desc: "A simple application for ordering coffee. This website uses NextJs, Typescript, Prisma, shadcnUI, and TailwindCss.",
       techs: ["NextJs", "Typescript", "Prisma", "shadcnUI", "TailwindCss"],
       year: 2024,
       image: "/projects/p-5.png",
@@ -74,18 +74,18 @@ export default function OtherProject() {
               <div className="py-2 z-20 px-2 font-semibold text-lg bg-slate-600 text-white absolute top-0 left-0">
                 {project.year}
               </div>
-              <div className="absolute px-10 hover:opacity-0 transition-all duration-300 top-0 right-0 left-0 bottom-0 bg-gray-300/85 flex flex-col gap-y-3 items-center justify-center">
-                <h1 className="text-black-primary text-3xl font-bold">
+              <div className="absolute px-10 hover:opacity-0 transition-all duration-300 top-0 right-0 left-0 bottom-0 bg-gray-300/85 flex flex-col gap-y-1 md:gap-y-3 items-center justify-center">
+                <h1 className="text-black-primary text-center text-xl lg:text-3xl font-semibold">
                   {project.title}
                 </h1>
-                <p className="text-black-primary text-lg text-center">
+                <p className="text-black-primary text-sm lg:text-lg text-center">
                   {project.desc}
                 </p>
-                <div className="flex items-center gap-x-4">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 justify-center">
                   {project.techs.map((tech, i) => (
                     <div
                       key={i}
-                      className="py-2 px-3 font-semibold text-lg bg-slate-600 text-white"
+                      className="py-1 lg:py-2 px-3 md:font-semibold text-sm  bg-slate-600 text-white"
                     >
                       {tech}
                     </div>

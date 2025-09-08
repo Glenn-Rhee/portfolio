@@ -29,7 +29,7 @@ export default function MainPage() {
 
   return (
     <ShellSection>
-      <div  className="flex flex-col text-center md:text-start justify-center gap-y-4 md:gap-y-6 md:pe-8 lg:pe-20">
+      <div className="flex flex-col text-center md:text-start justify-center gap-y-4 md:gap-y-6 md:pe-8 lg:pe-20">
         <motion.h4
           initial={{
             x: -40,
@@ -95,7 +95,7 @@ export default function MainPage() {
           className="flex mx-auto md:mx-0 items-center gap-x-4"
         >
           <a href="#contact">
-            <button className="text-gray-100 mx-auto md:mx-0 text-base md:text-lg bg-slate-900 cursor-pointer rounded-2xl w-[8rem] md:w-[10rem] py-2">
+            <button className="text-gray-100 mx-auto md:mx-0 text-base md:text-lg hover:bg-gradient-to-br active:scale-95 hover:from-slate-700 hover:to-slate-900 bg-slate-900 cursor-pointer rounded-2xl w-[8rem] md:w-[10rem] py-2">
               Contact Me
             </button>
           </a>

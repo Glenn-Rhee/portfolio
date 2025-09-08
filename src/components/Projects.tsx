@@ -111,7 +111,7 @@ export default function Projects() {
               ease: "easeOut",
               delay: 0.7,
             }}
-            className="text-gray-100 text-base md:text-lg bg-slate-900 cursor-pointer rounded-2xl w-[8rem] md:w-[10rem] py-2"
+            className="text-gray-100 text-base hover:bg-gradient-to-br active:scale-95 hover:from-slate-700 hover:to-slate-900 md:text-lg bg-slate-900 cursor-pointer rounded-2xl w-[8rem] md:w-[10rem] py-2"
           >
             Learn More
           </motion.button>

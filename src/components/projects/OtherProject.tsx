@@ -56,6 +56,13 @@ const projects: Project[] = [
     year: 2023,
     image: "/projects/p-8.jpg",
   },
+  {
+    title: "Sistem Informasi KKP",
+    desc: "The KKP Information System is a digital platform that helps manage data, reporting, and program monitoring for Indonesia’s Ministry of Marine Affairs and Fisheries. It makes sharing information easier and supports faster, more transparent decision-making.",
+    techs: ["NextJs", "TailwindCss", "Firebase", "Uploadthing"],
+    year: 2025,
+    image: "/projects/p-9.png",
+  },
 ];
 export default function OtherProject() {
   const { gapFromTop } = useNavbar();

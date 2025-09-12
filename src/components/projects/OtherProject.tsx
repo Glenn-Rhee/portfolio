@@ -58,10 +58,17 @@ const projects: Project[] = [
   },
   {
     title: "Sistem Informasi KKP",
-    desc: "The KKP Information System is a digital platform that helps manage data, reporting, and program monitoring for Indonesia’s Ministry of Marine Affairs and Fisheries. It makes sharing information easier and supports faster, more transparent decision-making.",
+    desc: "The KKP Information System is a digital platform that helps manage data, reporting, and program monitoring for Indonesia's Ministry of Marine Affairs and Fisheries.",
     techs: ["NextJs", "TailwindCss", "Firebase", "Uploadthing"],
     year: 2025,
     image: "/projects/p-9.png",
+  },
+  {
+    title: "Krisfy App",
+    desc: "Krisfy is the leading DeFi platform to maximize the value of your crypto assets. Lend, borrow, and earn with institutional-grade security and competitive yields.",
+    techs: ["React", "Redux", "TailwindCSS", "Metamask", "Motoko"],
+    year: 2025,
+    image: "/projects/p-10.png",
   },
 ];
 export default function OtherProject() {
@@ -120,7 +127,7 @@ export default function OtherProject() {
                 alt={`Project ${i + 1} Ariel`}
                 width={700}
                 height={700}
-                className="shadow-md"
+                className="shadow-md w-full"
               />
               <div className="py-2 z-20 px-2 font-semibold text-lg bg-slate-600 text-white absolute top-0 left-0">
                 {project.year}

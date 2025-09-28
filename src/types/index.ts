@@ -4,3 +4,12 @@ export interface ResponsePayload<T = unknown> {
   statusCode: number;
   data?: T;
 }
+
+export interface DataSong {
+  isPlaying: boolean;
+  title: string;
+  artist: string;
+  album: string;
+  albumImageUrl: string;
+  songUrl: string;
+}

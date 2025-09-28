@@ -2,7 +2,6 @@ import ResponseError from "@/error/response-error";
 import { ResponsePayload } from "@/types";
 import { NextRequest, NextResponse } from "next/server";
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
-// const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 
 const redirect_uri =
   process.env.NODE_ENV === "production"

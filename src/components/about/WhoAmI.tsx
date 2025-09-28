@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 import { variantsText } from "../MainPage";
 import { useNavbar } from "@/store/NavbarStore";
 import { useEffect, useState } from "react";
+import { DataSong } from "@/types";
+import PlayingAnimation from "./PlayingAnimation";
 
-export default function WhoAmI() {
+export default function WhoAmI({ dataSong }: { dataSong: DataSong }) {
   const { gapFromTop } = useNavbar();
   const [isShow, setIsShow] = useState(gapFromTop >= 0 && gapFromTop <= 570);
 
@@ -167,12 +169,12 @@ export default function WhoAmI() {
             }}
             className="text-justify mt-3 text-md text-slate-600 md:text-lg"
           >
-            Hallo, I’m Ariel Rizki Muhtamad Bakri, a tech enthusiast and
+            Hallo, I&apos;m Ariel Rizki Muhtamad Bakri, a tech enthusiast and
             aspiring Web Developer. Originating from Jakarta, Indonesia, I’m
             currently embarking on a fascinating journey at Gunadarma
-            University. Where I’m pursuing my degree in Information System. My
-            passion for technology and coding knows no bounds. Let’s connect and
-            explore this ever-evolving world of tech together!
+            University. Where I&apos;m pursuing my degree in Information System.
+            My passion for technology and coding knows no bounds. Let&apos;s
+            connect and explore this ever-evolving world of tech together!
           </motion.p>
           <motion.div
             initial={{
@@ -195,17 +197,29 @@ export default function WhoAmI() {
                 opacity: 0,
               },
             }}
-            className="w-full mt-4 py-3 px-4 border border-slate-500 rounded-lg bg-white flex items-center gap-x-10"
+            className="w-full mt-4 py-3 px-4 border border-slate-500 rounded-lg bg-white flex items-center gap-x-4"
           >
             <Image
-              src={"/spotify.png"}
+              src={dataSong.isPlaying ? dataSong.albumImageUrl : "/spotify.png"}
               alt="Spotify picture"
               width={50}
               height={50}
             />
-            <span className="text-md lg:text-xl font-semibold text-black-primary">
-              Currently offline
-            </span>
+            {dataSong.isPlaying ? (
+              <div className="w-full flex h-full gap-x-4 items-center">
+                <PlayingAnimation />
+                <span className="text-md lg:text-lg font-semibold text-black-primary">
+                  {dataSong.title} -{" "}
+                  <span className="text-base lg:text-lg font-normal">
+                    {dataSong.artist}
+                  </span>
+                </span>
+              </div>
+            ) : (
+              <span className="text-md lg:text-xl font-semibold text-black-primary">
+                Currently offline
+              </span>
+            )}
           </motion.div>
         </div>
       </div>

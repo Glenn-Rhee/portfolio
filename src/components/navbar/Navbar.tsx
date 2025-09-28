@@ -157,7 +157,7 @@ export default function Navbar() {
               behavior: "smooth",
             });
           }}
-          className="w-12 h-12 cursor-pointer z-40 active:bg-slate-900 transition-all duration-200 aspect-square fixed bottom-5 right-5 flex items-center justify-center rounded-full bg-slate-800 text-gray-100 font-semibold"
+          className="w-12 h-12 cursor-pointer z-40 active:bg-slate-900 transition-all duration-200 aspect-square fixed bottom-5 right-10 flex items-center justify-center rounded-full bg-slate-800 text-gray-100 font-semibold"
         >
           <ChevronUp color="#ffffff" size={24} />
         </button>

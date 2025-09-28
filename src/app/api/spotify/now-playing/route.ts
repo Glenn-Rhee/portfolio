@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
+// Get access token spotify
 const getAccessToken = async () => {
   const response = await fetch(TOKEN_ENDPOINT, {
     method: "POST",

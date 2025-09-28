@@ -8,6 +8,7 @@ import { DataSong } from "@/types";
 import PlayingAnimation from "./PlayingAnimation";
 import { BeatLoader } from "react-spinners";
 import clsx from "clsx";
+import Link from "next/link";
 
 export default function WhoAmI() {
   const { gapFromTop } = useNavbar();
@@ -218,7 +219,10 @@ export default function WhoAmI() {
             }}
             className={clsx(
               "w-full mt-4 px-4 border border-slate-500 rounded-lg bg-white flex items-center gap-x-4",
-              loading || !dataSong ? "py-5" : "py-3"
+              loading || !dataSong ? "py-5" : "py-3",
+              dataSong && dataSong.isPlaying
+                ? "justify-between"
+                : "justify-start"
             )}
           >
             {loading || !dataSong ? (
@@ -238,12 +242,15 @@ export default function WhoAmI() {
                 {dataSong.isPlaying ? (
                   <div className="w-full flex h-full gap-x-4 items-center">
                     <PlayingAnimation />
-                    <span className="text-md lg:text-lg font-semibold text-black-primary">
+                    <Link
+                      href={dataSong.songUrl}
+                      className="text-md lg:text-lg font-semibold text-black-primary"
+                    >
                       {dataSong.title} -{" "}
-                      <span className="text-base lg:text-lg font-normal">
+                      <span className="text-sm lg:text-base font-medium text-slate-800/60">
                         {dataSong.artist}
                       </span>
-                    </span>
+                    </Link>
                   </div>
                 ) : (
                   <span className="text-md lg:text-xl font-semibold text-black-primary">

@@ -218,7 +218,7 @@ export default function WhoAmI() {
               },
             }}
             className={clsx(
-              "w-full mt-4 px-4 border border-slate-500 rounded-lg bg-white flex items-center gap-x-4",
+              "w-full mt-4 px-4 border border-slate-500 rounded-lg bg-white flex items-center gap-x-2",
               loading || !dataSong ? "py-5" : "py-3",
               dataSong && dataSong.isPlaying
                 ? "justify-between"
@@ -235,22 +235,30 @@ export default function WhoAmI() {
                   src={
                     dataSong.isPlaying ? dataSong.albumImageUrl : "/spotify.png"
                   }
-                  alt="Spotify picture"
+                  alt={dataSong.isPlaying ? dataSong.album : "Spotify Logo"}
                   width={50}
                   height={50}
+                  className={clsx(dataSong.isPlaying ? "rounded-md" : "")}
                 />
                 {dataSong.isPlaying ? (
                   <div className="w-full flex h-full gap-x-4 items-center">
-                    <PlayingAnimation />
-                    <Link
-                      href={dataSong.songUrl}
-                      className="text-md lg:text-lg font-semibold text-black-primary"
-                    >
-                      {dataSong.title} -{" "}
-                      <span className="text-sm lg:text-base font-medium text-slate-800/60">
+                    <div className="flex items-center px-4 h-full gap-x-2">
+                      <span className="text-base lg:text-md font-semibold text-black-primary">
+                        Now Playing
+                      </span>
+                      <PlayingAnimation />
+                    </div>
+                    <div className="flex flex-col">
+                      <Link
+                        href={dataSong.songUrl}
+                        className="text-sm lg:text-base font-semibold text-black-primary"
+                      >
+                        {dataSong.title}
+                      </Link>
+                      <span className="text-xs lg:text-[13px] font-medium text-slate-800/60">
                         {dataSong.artist}
                       </span>
-                    </Link>
+                    </div>
                   </div>
                 ) : (
                   <span className="text-md lg:text-xl font-semibold text-black-primary">

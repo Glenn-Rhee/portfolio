@@ -6,9 +6,13 @@ import { useNavbar } from "@/store/NavbarStore";
 import { useEffect, useState } from "react";
 import { DataSong } from "@/types";
 import PlayingAnimation from "./PlayingAnimation";
+import { BeatLoader } from "react-spinners";
+import clsx from "clsx";
 
-export default function WhoAmI({ dataSong }: { dataSong: DataSong }) {
+export default function WhoAmI() {
   const { gapFromTop } = useNavbar();
+  const [dataSong, setDataSong] = useState<DataSong | null>(null);
+  const [loading, setLoading] = useState(true);
   const [isShow, setIsShow] = useState(gapFromTop >= 0 && gapFromTop <= 570);
 
   useEffect(() => {
@@ -18,6 +22,21 @@ export default function WhoAmI({ dataSong }: { dataSong: DataSong }) {
       setIsShow(true);
     }
   }, [gapFromTop]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("/api/spotify/now-playing");
+      const dataResponse = (await response.json()) as DataSong;
+      setDataSong(dataResponse);
+      setLoading(false);
+    };
+
+    fetchData();
+
+    const interval = setInterval(fetchData, 30000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -197,28 +216,41 @@ export default function WhoAmI({ dataSong }: { dataSong: DataSong }) {
                 opacity: 0,
               },
             }}
-            className="w-full mt-4 py-3 px-4 border border-slate-500 rounded-lg bg-white flex items-center gap-x-4"
+            className={clsx(
+              "w-full mt-4 px-4 border border-slate-500 rounded-lg bg-white flex items-center gap-x-4",
+              loading || !dataSong ? "py-5" : "py-3"
+            )}
           >
-            <Image
-              src={dataSong.isPlaying ? dataSong.albumImageUrl : "/spotify.png"}
-              alt="Spotify picture"
-              width={50}
-              height={50}
-            />
-            {dataSong.isPlaying ? (
-              <div className="w-full flex h-full gap-x-4 items-center">
-                <PlayingAnimation />
-                <span className="text-md lg:text-lg font-semibold text-black-primary">
-                  {dataSong.title} -{" "}
-                  <span className="text-base lg:text-lg font-normal">
-                    {dataSong.artist}
-                  </span>
-                </span>
+            {loading || !dataSong ? (
+              <div className="h-full w-full flex items-center justify-center">
+                <BeatLoader color="#121212" />
               </div>
             ) : (
-              <span className="text-md lg:text-xl font-semibold text-black-primary">
-                Currently offline
-              </span>
+              <>
+                <Image
+                  src={
+                    dataSong.isPlaying ? dataSong.albumImageUrl : "/spotify.png"
+                  }
+                  alt="Spotify picture"
+                  width={50}
+                  height={50}
+                />
+                {dataSong.isPlaying ? (
+                  <div className="w-full flex h-full gap-x-4 items-center">
+                    <PlayingAnimation />
+                    <span className="text-md lg:text-lg font-semibold text-black-primary">
+                      {dataSong.title} -{" "}
+                      <span className="text-base lg:text-lg font-normal">
+                        {dataSong.artist}
+                      </span>
+                    </span>
+                  </div>
+                ) : (
+                  <span className="text-md lg:text-xl font-semibold text-black-primary">
+                    Currently offline
+                  </span>
+                )}
+              </>
             )}
           </motion.div>
         </div>

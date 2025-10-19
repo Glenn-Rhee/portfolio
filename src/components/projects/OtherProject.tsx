@@ -70,6 +70,20 @@ const projects: Project[] = [
     year: 2025,
     image: "/projects/p-10.png",
   },
+  {
+    title: "E Arsip KKP",
+    desc: "This project is an employee archive management system designed to record and store employee names.",
+    techs: ["NextJs", "TailwindCss", "Supabase", "ShadcnUI"],
+    year: 2025,
+    image: "/projects/p-11.png",
+  },
+  {
+    title: "Progress Arsip KKP",
+    desc: "This project manages and organizes Google Drive links with adjustable access control.",
+    techs: ["NextJs", "TailwindCss", "Supabase"],
+    year: 2025,
+    image: "/projects/p-12.png",
+  },
 ];
 export default function OtherProject() {
   const { gapFromTop } = useNavbar();

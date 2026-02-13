@@ -143,10 +143,10 @@ export default function OtherProject() {
                 height={700}
                 className="shadow-md w-full"
               />
-              <div className="py-2 z-20 px-2 group-hover:opacity-50 font-semibold text-lg bg-slate-600 text-white absolute top-0 left-0">
+              <div className="py-2 z-20 px-2 group-hover:opacity-50 group-active:opacity-50 font-semibold text-lg bg-slate-600 text-white absolute top-0 left-0">
                 {project.year}
               </div>
-              <div className="absolute px-10 group-hover:opacity-0 transition-all duration-300 top-0 right-0 left-0 bottom-0 bg-gray-400/85 flex flex-col gap-y-1 md:gap-y-3 items-center justify-center">
+              <div className="absolute px-10 group-hover:opacity-0 group-active:opacity-0 transition-all duration-300 top-0 right-0 left-0 bottom-0 bg-gray-400/85 flex flex-col gap-y-1 md:gap-y-3 items-center justify-center">
                 <h1 className="text-black-primary text-center text-xl lg:text-3xl font-semibold">
                   {project.title}
                 </h1>

@@ -6,6 +6,14 @@ import { variantsText } from "../MainPage";
 import { useNavbar } from "@/store/NavbarStore";
 import { useEffect, useState } from "react";
 
+const certificates = [
+  "Digister Connect Goes to Gunadarma University by Telkom Indonesia",
+  "Google Developer Student Clubs | Designing Future With Backend",
+  "Dicoding Dasar Pemrograman Web",
+  "Dicoding Frontend Web",
+  "Certificate of Internship - Kementerian Kelautan & Perikanan",
+];
+
 export default function Education() {
   const { gapFromTop } = useNavbar();
   const [isShow, setIsShow] = useState(gapFromTop > 1300);
@@ -208,39 +216,16 @@ export default function Education() {
             animate={isShow ? "show" : "hide"}
             className="flex flex-col gap-y-5 mt-6"
           >
-            <div className="flex items-center gap-x-3">
-              <div className="w-10 h-10 rounded-full text-white aspect-square bg-black-primary flex items-center justify-center">
-                <Medal />
+            {certificates.map((cert, i) => (
+              <div key={i} className="flex items-center gap-x-3">
+                <div className="w-10 h-10 rounded-full text-white aspect-square bg-black-primary flex items-center justify-center">
+                  <Medal />
+                </div>
+                <span className="font-medium text-black-primary md:font-semibold text-base md:text-lg">
+                  {cert}
+                </span>
               </div>
-              <span className="font-medium text-black-primary md:font-semibold text-base md:text-lg">
-                Digister Connect Goes to Gunadarma University by Telkom
-                Indonesia
-              </span>
-            </div>
-            <div className="flex items-center gap-x-3">
-              <div className="w-10 h-10 rounded-full text-white aspect-square bg-black-primary flex items-center justify-center">
-                <Medal />
-              </div>
-              <span className="font-medium text-black-primary md:font-semibold text-base md:text-lg">
-                Google Developer Student Clubs | Designing Future With Backend
-              </span>
-            </div>
-            <div className="flex items-center gap-x-3">
-              <div className="w-10 h-10 rounded-full text-white aspect-square bg-black-primary flex items-center justify-center">
-                <Medal />
-              </div>
-              <span className="font-medium text-black-primary md:font-semibold text-base md:text-lg">
-                Dicoding Dasar Pemrograman Web
-              </span>
-            </div>
-            <div className="flex items-center gap-x-3">
-              <div className="w-10 h-10 rounded-full text-white aspect-square bg-black-primary flex items-center justify-center">
-                <Medal />
-              </div>
-              <span className="font-medium text-black-primary md:font-semibold text-base md:text-lg">
-                Dicoding Frontend Web
-              </span>
-            </div>
+            ))}
           </motion.div>
         </div>
       </div>

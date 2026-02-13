@@ -115,7 +115,7 @@ export default function WhoAmI() {
                   }}
                 >
                   <Image
-                    src={"/pict-1.jpg"}
+                    src={"/profile.jpg"}
                     alt="Ariel picture"
                     width={200}
                     height={200}
@@ -147,7 +147,7 @@ export default function WhoAmI() {
                   }}
                 >
                   <Image
-                    src={"/pict-1.jpg"}
+                    src={"/pict-3.jpg"}
                     alt="Ariel picture"
                     width={200}
                     height={200}
@@ -218,11 +218,11 @@ export default function WhoAmI() {
               },
             }}
             className={clsx(
-              "w-full mt-4 px-4 border border-slate-500 rounded-lg bg-white flex items-center gap-x-2",
+              "w-full mt-4 px-4 border border-slate-500 rounded-lg bg-white flex items-center md:gap-x-2 overflow-hidden",
               loading || !dataSong ? "py-5" : "py-3",
               dataSong && dataSong.isPlaying
                 ? "justify-between"
-                : "justify-start"
+                : "justify-start",
             )}
           >
             {loading || !dataSong ? (
@@ -241,21 +241,21 @@ export default function WhoAmI() {
                   className={clsx(dataSong.isPlaying ? "rounded-md" : "")}
                 />
                 {dataSong.isPlaying ? (
-                  <div className="w-full flex h-full gap-x-4 items-center">
-                    <div className="flex items-center px-4 h-full gap-x-2">
-                      <span className="text-base lg:text-md font-semibold text-black-primary">
+                  <div className="w-full flex h-full md:gap-x-4 items-center">
+                    <div className="flex items-center px-4 h-full gap-x-2 shrink-0">
+                      <span className="text-sm lg:text-md font-medium md:font-semibold text-black-primary">
                         Now Playing
                       </span>
                       <PlayingAnimation />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col min-w-0 flex-1 w-0 overflow-hidden">
                       <Link
                         href={dataSong.songUrl}
-                        className="text-sm lg:text-base font-semibold text-black-primary"
+                        className="text-sm lg:text-base font-semibold text-black-primary truncate block"
                       >
                         {dataSong.title}
                       </Link>
-                      <span className="text-xs lg:text-[13px] font-medium text-slate-800/60">
+                      <span className="text-xs lg:text-[13px] font-medium text-slate-800/60 truncate block">
                         {dataSong.artist}
                       </span>
                     </div>

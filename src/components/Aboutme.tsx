@@ -133,7 +133,7 @@ export default function Aboutme() {
         className="relative row-start-1 w-fit mx-auto md:row-start-auto"
       >
         <Image
-          src={"/pict-1.jpg"}
+          src={"/pict-3.jpg"}
           width={400}
           height={600}
           alt="Ariel Rizki Profile Picture"

@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 export default async function AboutPage() {
   return (
     <div className="max-w-dvw overflow-x-hidden">
-      <Container className="flex-col px-2 pt-14 items-start justify-start gap-y-10 md:gap-y-6">
+      <Container className="flex-col px-2 pt-14 items-start justify-start gap-y-10 md:gap-y-6 overflow-y-hidden">
         <WhoAmI />
       </Container>
-      <Container className="flex-col px-2 pt-14 items-start justify-start gap-y-10 md:gap-y-6">
+      <Container className="flex-col px-2 pt-14 items-start justify-start gap-y-10 md:gap-y-6 ">
         <Skills />
       </Container>
       <Container className="flex-col !h-fit px-2 !pt-2 pb-14 items-start justify-start gap-y-10 md:gap-y-6">

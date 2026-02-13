@@ -14,7 +14,7 @@ import { useNavbar } from "@/store/NavbarStore";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import clsx from "clsx";
+import { cn } from "@/utils/cn";
 
 export default function Navbar() {
   const router = useRouter();
@@ -60,11 +60,11 @@ export default function Navbar() {
           transition={{
             delay: isOpen ? 0.3 : 0,
           }}
-          className={clsx(
+          className={cn(
             "relative z-50 flex items-center gap-x-4 text-black-primary text-2xl font-semibold tracking-wider",
             {
               "-ms-6": pathname !== "/",
-            }
+            },
           )}
         >
           {pathname !== "/" ? (
@@ -100,7 +100,7 @@ export default function Navbar() {
                 e.preventDefault();
                 if (pathname === "/") {
                   const element = document.querySelector(
-                    "#about"
+                    "#about",
                   ) as HTMLDivElement;
                   goToElement(element.offsetTop);
                 } else {
@@ -123,7 +123,7 @@ export default function Navbar() {
                 e.preventDefault();
                 if (pathname === "/") {
                   const element = document.querySelector(
-                    "#projects"
+                    "#projects",
                   ) as HTMLDivElement;
                   goToElement(element.offsetTop);
                 } else {

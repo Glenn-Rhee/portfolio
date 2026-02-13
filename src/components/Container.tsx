@@ -1,5 +1,5 @@
 "use client";
-import clsx from "clsx";
+import { cn } from "@/utils/cn";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
@@ -34,9 +34,9 @@ export default function Container(props: ContainerProps) {
   return (
     <div
       id={id}
-      className={clsx(
+      className={cn(
         "h-screen w-screen flex items-center justify-center pt-0 md:pt-16 lg:pt-20 px-4 md:px-16 lg:px-32 relative z-10",
-        className
+        className,
       )}
     >
       {children}

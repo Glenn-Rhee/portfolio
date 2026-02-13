@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 import { DataSong } from "@/types";
 import PlayingAnimation from "./PlayingAnimation";
 import { BeatLoader } from "react-spinners";
-import clsx from "clsx";
 import Link from "next/link";
+import { cn } from "@/utils/cn";
 
 export default function WhoAmI() {
   const { gapFromTop } = useNavbar();
@@ -217,7 +217,7 @@ export default function WhoAmI() {
                 opacity: 0,
               },
             }}
-            className={clsx(
+            className={cn(
               "w-full mt-4 px-4 border border-slate-500 rounded-lg bg-white flex items-center md:gap-x-2 overflow-hidden",
               loading || !dataSong ? "py-5" : "py-3",
               dataSong && dataSong.isPlaying
@@ -238,7 +238,7 @@ export default function WhoAmI() {
                   alt={dataSong.isPlaying ? dataSong.album : "Spotify Logo"}
                   width={50}
                   height={50}
-                  className={clsx(dataSong.isPlaying ? "rounded-md" : "")}
+                  className={cn(dataSong.isPlaying ? "rounded-md" : "")}
                 />
                 {dataSong.isPlaying ? (
                   <div className="w-full flex h-full md:gap-x-4 items-center">

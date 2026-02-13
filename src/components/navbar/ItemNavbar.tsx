@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cn } from "@/utils/cn";
 
 export default function ItemNavbar({
   children,
@@ -9,9 +9,9 @@ export default function ItemNavbar({
 }) {
   return (
     <li
-      className={clsx(
+      className={cn(
         "after:block cursor-pointer after:content-[''] after:duration-150 after:mt-1 hover:after:w-full after:w-0 after:mx-auto after:transition-all after:h-[2px] after:bg-slate-900",
-        isActive ? "after:w-full" : "after:w-0"
+        isActive ? "after:w-full" : "after:w-0",
       )}
     >
       {children}

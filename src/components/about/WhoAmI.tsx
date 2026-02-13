@@ -218,11 +218,12 @@ export default function WhoAmI() {
               },
             }}
             className={cn(
-              "w-full mt-4 px-4 border border-slate-500 rounded-lg bg-white flex items-center md:gap-x-2 overflow-hidden",
+              "w-full mt-4 px-4 border border-slate-500 rounded-lg flex items-center md:gap-x-2 overflow-hidden relative",
               loading || !dataSong ? "py-5" : "py-3",
               dataSong && dataSong.isPlaying
                 ? "justify-between"
                 : "justify-start",
+              dataSong?.isPlaying ? "bg-transparent" : "bg-white",
             )}
           >
             {loading || !dataSong ? (
@@ -267,6 +268,18 @@ export default function WhoAmI() {
                 )}
               </>
             )}
+            {dataSong?.isPlaying ? (
+              <Image
+                src={
+                  dataSong.isPlaying ? dataSong.albumImageUrl : "/spotify.png"
+                }
+                alt={dataSong.isPlaying ? dataSong.album : "Spotify Logo"}
+                fill
+                className={cn(
+                  "absolute top-0 right-0 left-0 bottom-0 w-full object-cover object-center -z-10 opacity-25",
+                )}
+              />
+            ) : null}
           </motion.div>
         </div>
       </div>

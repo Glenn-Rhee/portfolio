@@ -10,7 +10,7 @@ const getAccessToken = async () => {
       Authorization:
         "Basic " +
         Buffer.from(
-          process.env.CLIENT_ID + ":" + process.env.SPOTIFY_CLIENT_SECRET
+          process.env.CLIENT_ID + ":" + process.env.SPOTIFY_CLIENT_SECRET,
         ).toString("base64"),
       "Content-Type": "application/x-www-form-urlencoded",
     },
@@ -36,7 +36,6 @@ export async function GET(_req: NextRequest) {
     return NextResponse.json({ isPlaying: false });
   }
   const song = await response.json();
-  
   return NextResponse.json({
     isPlaying: song.is_playing,
     title: song.item.name,

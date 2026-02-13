@@ -51,14 +51,14 @@ export default function Highlight() {
           className="flex flex-col gap-y-4 justify-center"
         >
           <Image
-            src={"/projects/p-1.jpg"}
+            src={"/projects/p-1.png"}
             alt="Project 1 Ariel"
             width={500}
             height={500}
             className="rounded-lg shadow-md self-center md:self-start"
           />
           <Image
-            src={"/projects/p-2.jpg"}
+            src={"/projects/p-2.png"}
             alt="Project 2 Ariel"
             width={500}
             height={500}
@@ -89,7 +89,7 @@ export default function Highlight() {
             }}
             className="text-black-primary font-semibold md:font-bold text-xl md:text-3xl"
           >
-            Addorama Store
+            Lea Juice App
           </motion.h5>
           <motion.p
             initial={{
@@ -114,14 +114,11 @@ export default function Highlight() {
             }}
             className="text-slate-600 font-medium text-lg text-justify"
           >
-            I developed the Addorama Store project, a platform focused on the
-            sale of electronic goods. Through its main website, users can easily
-            purchase a wide range of electronic products. In addition, users can
-            also register as sellers through the seller domain, which provides a
-            dashboard to monitor daily, weekly, monthly, and yearly sales data.
-            In developing this project, I utilized Next.js, TypeScript, Express,
-            JWT, and Prisma to ensure a responsive, secure, and efficient
-            system.
+            Lea-Juice-App is an online marketplace for fresh juices, fruits, and
+            salads. Customers can browse products, add items to a cart, checkout
+            using integrated payment gateways, and leave reviews and comments.
+            The project includes an admin interface for managing products,
+            viewing sales and customers, and handling transactions.
           </motion.p>
           <motion.div
             initial={{
@@ -149,7 +146,7 @@ export default function Highlight() {
             <button
               onClick={() => {
                 const element = document.querySelector(
-                  "#other"
+                  "#other",
                 ) as HTMLDivElement;
                 element.scrollIntoView({ behavior: "smooth" });
               }}
@@ -158,7 +155,7 @@ export default function Highlight() {
               More
             </button>
             <a
-              href="https://addorama.vercel.app/"
+              href="https://lea-juice-app.vercel.app/"
               target="_blank"
               className="hover:underline"
             >

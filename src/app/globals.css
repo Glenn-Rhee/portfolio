@@ -8,3 +8,7 @@
 @theme {
   --color-black-primary: #121212;
 }
+
+body {
+  overflow-x: hidden;
+}

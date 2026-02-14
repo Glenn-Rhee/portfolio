@@ -4,6 +4,28 @@ import { variantsText } from "../MainPage";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useNavbar } from "@/store/NavbarStore";
+const skills = [
+  {
+    name: "Frontend Development",
+    iconHref: "/skills/web-development.png",
+    iconAlt: "Frontend Development icon",
+  },
+  {
+    name: "Rest API",
+    iconHref: "/skills/rest-api.png",
+    iconAlt: "Rest API icon",
+  },
+  {
+    name: "Backend Development",
+    iconHref: "/skills/backend.png",
+    iconAlt: "Backend Development icon",
+  },
+  {
+    name: "Testing & Debugging",
+    iconHref: "/skills/testing.png",
+    iconAlt: "Testing & Debugging icon",
+  },
+];
 
 export default function Skills() {
   const { gapFromTop } = useNavbar();
@@ -16,29 +38,6 @@ export default function Skills() {
       setIsShow(false);
     }
   }, [gapFromTop]);
-
-  const skills = [
-    {
-      name: "Frontend Development",
-      iconHref: "/skills/web-development.png",
-      iconAlt: "Frontend Development icon",
-    },
-    {
-      name: "Rest API",
-      iconHref: "/skills/rest-api.png",
-      iconAlt: "Rest API icon",
-    },
-    {
-      name: "Backend Development",
-      iconHref: "/skills/backend.png",
-      iconAlt: "Backend Development icon",
-    },
-    {
-      name: "Testing & Debugging",
-      iconHref: "/skills/testing.png",
-      iconAlt: "Testing & Debugging icon",
-    },
-  ];
 
   return (
     <div className="w-full flex mt-40 md:mt-16 flex-col items-center md:gap-y-24 lg:gap-y-28 gap-y-16 justify-center">
@@ -208,8 +207,10 @@ export default function Skills() {
           </h5>
           <span className="font-semibold md:font-bold text-black-primary text-center">
             VsCode | Git | Github |{" "}
-            <span className="text-slate-800 font-normal md:font-semibold">Figma</span> |
-            Postman
+            <span className="text-slate-800 font-normal md:font-semibold">
+              Figma
+            </span>{" "}
+            | Postman
           </span>
         </motion.div>
       </div>

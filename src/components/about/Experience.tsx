@@ -18,22 +18,28 @@ export default function Experience() {
           <Timeline />
 
           <div className="max-w-[38rem] flex items-end flex-col">
-            <div className="flex relative items-center rounded-lg gap-x-8 px-8 py-1.5 bg-slate-900">
+            <div className="flex text-center md:text-start items-start md:items-center rounded-lg md:gap-x-8 px-4 md:px-8 py-1.5 w-fit bg-slate-900">
               <div className="flex text-white flex-col items-center justify-center">
-                <span className="font-bold">August 2025</span>
-                <span className="font-medium text-sm text-white/80">Start</span>
+                <span className="font-medium md:font-bold text-sm md:text-base">
+                  August 2025
+                </span>
+                <span className="md:font-medium text-sm text-white/80">
+                  Start
+                </span>
               </div>
-              <div className="h-full bg-white w-[1px]" />
               <div className="flex text-white flex-col items-center justify-center">
-                <span className="font-bold">Present</span>
-                <span className="font-medium text-sm text-white/80">End</span>
+                <span className="font-medium md:font-bold text-sm md:text-base">
+                  October 2025
+                </span>
+                <span className="md:font-medium text-sm text-white/80">
+                  End
+                </span>
               </div>
-              <div className="h-full bg-white w-[1px]" />
               <div className="flex flex-col items-center justify-center">
-                <span className="font-bold text-white/80">
+                <span className="font-medium text-white/80 md:font-bold text-sm md:text-base">
                   Jakarta, Indonesia
                 </span>
-                <span className="font-medium text-sm text-white/90">
+                <span className="md:font-medium text-sm text-white/90">
                   Location
                 </span>
               </div>

@@ -1,10 +1,9 @@
 "use client";
 import { Medal } from "lucide-react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { variantsText } from "../MainPage";
-import { useNavbar } from "@/store/NavbarStore";
-import { useEffect, useState } from "react";
+import { useRef } from "react";
 
 const certificates = [
   "Digister Connect Goes to Gunadarma University by Telkom Indonesia",
@@ -15,19 +14,11 @@ const certificates = [
 ];
 
 export default function Education() {
-  const { gapFromTop } = useNavbar();
-  const [isShow, setIsShow] = useState(gapFromTop > 1300);
-
-  useEffect(() => {
-    if (gapFromTop > 1300) {
-      setIsShow(true);
-    } else {
-      setIsShow(false);
-    }
-  }, [gapFromTop]);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isShow = useInView(ref, { amount: 0.3 });
 
   return (
-    <div className="mt-40 md:mt-16 w-full pb-[5rem]">
+    <div ref={ref} className="mt-40 md:mt-16 w-full pb-[5rem]">
       <motion.div
         initial={{
           x: -40,

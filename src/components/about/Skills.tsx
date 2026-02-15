@@ -1,8 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { variantsText } from "../MainPage";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavbar } from "@/store/NavbarStore";
 const skills = [
   {
@@ -28,19 +28,16 @@ const skills = [
 ];
 
 export default function Skills() {
-  const { gapFromTop } = useNavbar();
-  const [isShow, setIsShow] = useState(gapFromTop > 570 && gapFromTop <= 1300);
-
-  useEffect(() => {
-    if (gapFromTop > 570 && gapFromTop <= 1300) {
-      setIsShow(true);
-    } else {
-      setIsShow(false);
-    }
-  }, [gapFromTop]);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isShow = useInView(ref, {
+    amount: 0.3,
+  });
 
   return (
-    <div className="w-full flex mt-40 md:mt-16 flex-col items-center md:gap-y-24 lg:gap-y-28 gap-y-16 justify-center">
+    <div
+      ref={ref}
+      className="w-full flex flex-col items-center md:gap-y-24 lg:gap-y-28 gap-y-16 justify-center"
+    >
       {/* Skills & Expertise */}
       <div className="flex mx-auto flex-col gap-y-3">
         <motion.div

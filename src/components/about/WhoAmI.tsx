@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { variantsText } from "../MainPage";
 import { useNavbar } from "@/store/NavbarStore";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { DataSong } from "@/types";
 import PlayingAnimation from "./PlayingAnimation";
 import { BeatLoader } from "react-spinners";
@@ -11,18 +11,12 @@ import Link from "next/link";
 import { cn } from "@/utils/cn";
 
 export default function WhoAmI() {
-  const { gapFromTop } = useNavbar();
+  const ref = useRef<HTMLDivElement | null>(null);
   const [dataSong, setDataSong] = useState<DataSong | null>(null);
   const [loading, setLoading] = useState(true);
-  const [isShow, setIsShow] = useState(gapFromTop >= 0 && gapFromTop <= 570);
-
-  useEffect(() => {
-    if (gapFromTop > 570) {
-      setIsShow(false);
-    } else {
-      setIsShow(true);
-    }
-  }, [gapFromTop]);
+  const isShow = useInView(ref, {
+    amount: 0.3,
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,7 +34,7 @@ export default function WhoAmI() {
   }, []);
 
   return (
-    <>
+    <div ref={ref} className="space-y-4">
       <motion.h3
         initial={{
           x: -40,
@@ -53,7 +47,7 @@ export default function WhoAmI() {
           ease: "easeOut",
           delay: 0,
         }}
-        className="text-black-primary mt-6 ms-2 md:ms-0 font-bold text-3xl md:text-4xl text-start"
+        className="text-black-primary ms-2 md:ms-0 font-bold text-3xl md:text-4xl text-start"
       >
         Who Am I?
       </motion.h3>
@@ -283,6 +277,6 @@ export default function WhoAmI() {
           </motion.div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

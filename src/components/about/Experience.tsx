@@ -1,11 +1,16 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Timeline from "./Timeline";
+import { useRef } from "react";
 
 export default function Experience() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isShow = useInView(ref, {
+    amount: 0.3,
+  });
   return (
-    <>
-      <motion.h3 className="text-black-primary mt-6 ms-2 md:ms-0 font-bold text-3xl md:text-4xl text-start">
+    <div ref={ref} className="space-y-4">
+      <motion.h3 className="text-black-primary mt-6 font-bold text-3xl md:text-4xl text-start">
         Profesional Experience
       </motion.h3>
       <div className="gap-x-3 w-full">
@@ -52,6 +57,6 @@ export default function Experience() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

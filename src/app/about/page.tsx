@@ -12,17 +12,17 @@ export const metadata: Metadata = {
 
 export default async function AboutPage() {
   return (
-    <div>
-      <Container className="flex-col lg:pt-24 md:px-2 pt-20 md:pt-24 items-start justify-start gap-y-10 md:gap-y-6">
+    <div className="overflow-hidden space-y-5">
+      <Container className="flex-col gap-y-3 md:gap-y-0 py-10">
         <WhoAmI />
       </Container>
-      <Container className="flex-col px-2 pt-14 items-start justify-start gap-y-10 md:gap-y-6 ">
+      <Container className="flex-col gap-y-3 md:gap-y-0 py-10">
         <Skills />
       </Container>
-      <Container className="flex-col px-2 !pt-2 pb-14 items-start justify-start gap-y-10 md:gap-y-6">
+      <Container className="flex-col gap-y-3 md:gap-y-0 py-10 px-10">
         <Experience />
       </Container>
-      <Container className="flex-col px-2 pt-14 items-start justify-start gap-y-10 md:gap-y-6">
+      <Container className="flex-col gap-y-3 md:gap-y-0 py-10">
         <Education />
       </Container>
     </div>

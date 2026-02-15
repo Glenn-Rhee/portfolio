@@ -19,7 +19,7 @@ export default async function AboutPage() {
       <Container className="flex-col gap-y-3 md:gap-y-0 py-10">
         <Skills />
       </Container>
-      <Container className="flex-col gap-y-3 md:gap-y-0 py-10 px-10">
+      <Container className="justify-start gap-y-3 md:gap-y-0 py-10 px-10">
         <Experience />
       </Container>
       <Container className="flex-col gap-y-3 md:gap-y-0 py-10">

@@ -9,7 +9,7 @@ export default function Experience() {
     amount: 0.3,
   });
   return (
-    <div ref={ref} className="space-y-4">
+    <div ref={ref} className="space-y-4 w-full">
       <motion.h3 className="text-black-primary mt-6 font-bold text-3xl md:text-4xl text-start">
         Profesional Experience
       </motion.h3>

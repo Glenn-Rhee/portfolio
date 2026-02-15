@@ -46,7 +46,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="h-18 z-[70] lg:h-20 px-10 md:px-16 lg:px-32 sticky top-0 right-0 left-0 flex items-center justify-between lg:justify-self-start w-screen bg-transparent shadow-[0_1px_8px_0_rgba(100,120,255,0.1)] backdrop-blur-[7px]">
+      <nav className="h-18 z-[70] lg:h-20 px-10 md:px-16 lg:px-32 fixed top-0 right-0 left-0 flex items-center justify-between lg:justify-self-start w-screen bg-transparent shadow-[0_1px_8px_0_rgba(100,120,255,0.1)] backdrop-blur-[7px]">
         <motion.h1
           animate={isOpen ? "open" : "close"}
           variants={{

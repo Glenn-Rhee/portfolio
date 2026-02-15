@@ -2,70 +2,58 @@
 import { Mail } from "lucide-react";
 import ShellSection from "./ShellSection";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { variantsText } from "./MainPage";
-import { useEffect, useState } from "react";
+import { useRef } from "react";
+
+const contacts = [
+  {
+    icon: <Mail size={35} color="#f3f4f6" />,
+    href: "mailto:arielrizki.fs1@gmail.com",
+  },
+  {
+    icon: (
+      <Image
+        src={"/github-mark-white.png"}
+        width={35}
+        height={35}
+        alt="Github Icon"
+      />
+    ),
+    href: "https://github.com/Glenn-Rhee",
+  },
+  {
+    icon: (
+      <Image
+        src={"/instagram.png"}
+        width={70}
+        height={70}
+        alt="Instagram Icon"
+      />
+    ),
+    href: "https://www.instagram.com/aaarrl.r/",
+  },
+  {
+    icon: (
+      <Image
+        src={"/linked-in.png"}
+        width={42}
+        height={42}
+        alt="Linked in Icon"
+      />
+    ),
+    href: "https://www.linkedin.com/in/ariel-rizki-21b032287/",
+  },
+];
 
 export default function ContactMe() {
-  const [isShow, setIsShow] = useState(true);
-  const contacts = [
-    {
-      icon: <Mail size={35} color="#f3f4f6" />,
-      href: "mailto:arielrizki.fs1@gmail.com",
-    },
-    {
-      icon: (
-        <Image
-          src={"/github-mark-white.png"}
-          width={35}
-          height={35}
-          alt="Github Icon"
-        />
-      ),
-      href: "https://github.com/Glenn-Rhee",
-    },
-    {
-      icon: (
-        <Image
-          src={"/instagram.png"}
-          width={70}
-          height={70}
-          alt="Instagram Icon"
-        />
-      ),
-      href: "https://www.instagram.com/aaarrl.r/",
-    },
-    {
-      icon: (
-        <Image
-          src={"/linked-in.png"}
-          width={42}
-          height={42}
-          alt="Linked in Icon"
-        />
-      ),
-      href: "https://www.linkedin.com/in/ariel-rizki-21b032287/",
-    },
-  ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 1900) {
-        setIsShow(true);
-      } else {
-        setIsShow(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isShow = useInView(ref, {
+    amount: 0.3,
+  });
 
   return (
-    <ShellSection>
+    <ShellSection ref={ref}>
       <div className="flex flex-col text-center md:text-start justify-center gap-y-4 md:gap-y-6 md:pe-8 lg:pe-20">
         <motion.h2
           initial={{

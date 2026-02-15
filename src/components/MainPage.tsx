@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
-import { useEffect, useState } from "react";
-import { useNavbar } from "@/store/NavbarStore";
+import { motion, useInView, Variants } from "framer-motion";
+import { useRef } from "react";
 import ShellSection from "./ShellSection";
 
 export const variantsText: Variants = {
@@ -16,19 +15,13 @@ export const variantsText: Variants = {
   },
 };
 export default function MainPage() {
-  const { gapFromTop } = useNavbar();
-  const [isShow, setIsShow] = useState(gapFromTop >= 0 && gapFromTop <= 570);
-
-  useEffect(() => {
-    if (gapFromTop > 570) {
-      setIsShow(false);
-    } else {
-      setIsShow(true);
-    }
-  }, [gapFromTop]);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isShow = useInView(ref, {
+    amount: 0.3,
+  });
 
   return (
-    <ShellSection>
+    <ShellSection ref={ref}>
       <div className="flex flex-col text-center md:text-start justify-center gap-y-4 md:gap-y-6 md:pe-8 lg:pe-20">
         <motion.h4
           initial={{

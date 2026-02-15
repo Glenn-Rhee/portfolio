@@ -18,7 +18,7 @@ export default function Education() {
   const isShow = useInView(ref, { amount: 0.3 });
 
   return (
-    <div ref={ref} className="mt-40 md:mt-16 w-full pb-[5rem]">
+    <div ref={ref} className="md:mt-16 w-full pb-[5rem]">
       <motion.div
         initial={{
           x: -40,

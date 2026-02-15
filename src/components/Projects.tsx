@@ -2,30 +2,18 @@
 import Link from "next/link";
 import ShellSection from "./ShellSection";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { variantsText } from "./MainPage";
-import { useEffect, useState } from "react";
+import { useRef } from "react";
+
 export default function Projects() {
-  const [isShow, setIsShow] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 1300 && window.scrollY <= 1900) {
-        setIsShow(true);
-      } else {
-        setIsShow(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isShow = useInView(ref, {
+    amount: 0.3,
+  });
 
   return (
-    <ShellSection>
+    <ShellSection ref={ref} className="mt-14">
       <div className="flex flex-col text-center md:text-start justify-center gap-y-4 md:gap-y-6 md:pe-8 lg:pe-20">
         <motion.h2
           initial={{

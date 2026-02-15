@@ -10,7 +10,7 @@ export default async function HomePage(props: { searchParams: SearchParams }) {
   const params = await props.searchParams;
 
   return (
-    <>
+    <div className="space-y-16 overflow-hidden">
       <Container
         id="home"
         to={
@@ -20,18 +20,19 @@ export default async function HomePage(props: { searchParams: SearchParams }) {
               : params.to
             : undefined
         }
+        className="h-screen"
       >
         <MainPage />
       </Container>
-      <Container id="about">
+      <Container className="h-[calc(100dvh-2rem)]" id="about">
         <Aboutme />
       </Container>
-      <Container id="projects">
+      <Container className="h-[calc(100dvh-2rem)]" id="projects">
         <Projects />
       </Container>
-      <Container id="contact">
+      <Container className="h-[calc(100dvh-2rem)]" id="contact">
         <ContactMe />
       </Container>
-    </>
+    </div>
   );
 }

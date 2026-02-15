@@ -33,7 +33,7 @@ export default function WhoAmI() {
   }, []);
 
   return (
-    <div ref={ref} className="space-y-4">
+    <div ref={ref} className="space-y-4 mt-10 md:mt-20">
       <motion.h3
         initial={{
           x: -40,

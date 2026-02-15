@@ -30,7 +30,7 @@ export default function Experience() {
       </motion.h3>
       <div className="gap-x-3 w-full">
         <div className="w-full relative">
-          <Timeline />
+          <Timeline isShow={isShow} />
 
           <div className="max-w-[38rem] flex items-end flex-col">
             <motion.div

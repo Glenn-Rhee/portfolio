@@ -184,40 +184,41 @@ export default function Education() {
               Some of my certificates during my study.
             </span>
           </motion.div>
-          <motion.div
-            initial={{
-              x: 40,
-              opacity: 0,
-            }}
-            variants={{
-              show: {
-                x: 0,
-                opacity: 1,
-              },
-              hide: {
-                x: 40,
-                opacity: 0,
-              },
-            }}
-            transition={{
-              duration: 0.4,
-              ease: "easeOut",
-              delay: 0.5,
-            }}
-            animate={isShow ? "show" : "hide"}
-            className="flex flex-col gap-y-5 mt-6"
-          >
+          <div className="flex flex-col gap-y-5 mt-6">
             {certificates.map((cert, i) => (
-              <div key={i} className="flex items-center gap-x-3">
+              <motion.div
+                initial={{
+                  x: 40,
+                  opacity: 0,
+                }}
+                variants={{
+                  show: {
+                    x: 0,
+                    opacity: 1,
+                  },
+                  hide: {
+                    x: 40,
+                    opacity: 0,
+                  },
+                }}
+                transition={{
+                  duration: 0.4,
+                  ease: "easeOut",
+                  delay: 0.5 + (i + 1) * 0.2,
+                }}
+                animate={isShow ? "show" : "hide"}
+                key={i}
+                className="flex items-center gap-x-3"
+              >
                 <div className="w-10 h-10 rounded-full text-white aspect-square bg-black-primary flex items-center justify-center">
                   <Medal />
                 </div>
                 <span className="font-medium text-black-primary md:font-semibold text-base md:text-lg">
                   {cert}
                 </span>
-              </div>
+              </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { variantsText } from "../MainPage";
-import { useNavbar } from "@/store/NavbarStore";
 import { useEffect, useRef, useState } from "react";
 import { DataSong } from "@/types";
 import PlayingAnimation from "./PlayingAnimation";

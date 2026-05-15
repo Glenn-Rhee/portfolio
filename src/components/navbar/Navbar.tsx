@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/utils/cn";
+import Link from "next/link";
 
 export default function Navbar() {
   const router = useRouter();
@@ -135,7 +136,7 @@ export default function Navbar() {
             </a>
           </ItemNavbar>
           <ItemNavbar isActive={pathname === "/" && gapFromTop > 1900}>
-            <a
+            <Link
               href="#contact"
               onClick={(e) => {
                 e.preventDefault();
@@ -143,7 +144,7 @@ export default function Navbar() {
               }}
             >
               <Mail size={24} color="oklch(0.208 0.042 265.755)" />
-            </a>
+            </Link>
           </ItemNavbar>
         </ul>
         <HumbergerMenu />

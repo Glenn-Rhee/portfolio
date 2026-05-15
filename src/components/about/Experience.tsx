@@ -108,7 +108,7 @@ export default function Experience() {
                 Kementerian Kelautan dan Perikanan
               </h4>
               <span className="text-black-primary/80 font-semibold">
-                Sumber Daya Manusia{" "}
+                Full Stack Developer{" "}
                 <span className="text-sm font-normal ms-1">Internship</span>
               </span>
               <p className="mt-3 text-slate-700 text-justify">

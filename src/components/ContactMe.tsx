@@ -42,7 +42,7 @@ const contacts = [
         alt="Linked in Icon"
       />
     ),
-    href: "https://www.linkedin.com/in/ariel-rizki-21b032287/",
+    href: "https://www.linkedin.com/in/ariel-rizki-muhtamad-bakri-21b032287/",
   },
 ];
 

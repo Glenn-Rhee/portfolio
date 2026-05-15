@@ -84,6 +84,13 @@ const projects: Project[] = [
     year: 2025,
     image: "/projects/p-12.png",
   },
+  {
+    title: "PDF AI",
+    desc: "An AI-powered chatbot that enables users to interact with their PDF documents through natural conversation",
+    techs: ["Typescript", "NextJs", "LLM", "TailwindCss"],
+    image: "/projects/p-13.png",
+    year: 2026,
+  },
 ];
 export default function OtherProject() {
   const { gapFromTop } = useNavbar();

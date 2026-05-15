@@ -173,7 +173,12 @@ export default function Skills() {
               {" "}
               MongoDB
             </span>{" "}
-            | firebase | Golang | PHP
+            |
+            <span className="font-semibold md:font-bold text-black-primary">
+              {" "}
+              Golang{" "}
+            </span>
+            | Firebase | Supabase | PHP
           </span>
         </motion.div>
         <motion.div

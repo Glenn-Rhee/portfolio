@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { variantsText } from "../MainPage";
+import { highlightProject } from "@/utils/higlight-project";
+import Link from "next/link";
 
 export default function Highlight() {
   const { gapFromTop } = useNavbar();
@@ -51,14 +53,14 @@ export default function Highlight() {
           className="flex flex-col gap-y-4 justify-center"
         >
           <Image
-            src={"/projects/p-1.png"}
+            src={highlightProject.imgOne}
             alt="Project 1 Ariel"
             width={500}
             height={500}
             className="rounded-lg shadow-md self-center md:self-start"
           />
           <Image
-            src={"/projects/p-2.png"}
+            src={highlightProject.imgTwo}
             alt="Project 2 Ariel"
             width={500}
             height={500}
@@ -89,7 +91,7 @@ export default function Highlight() {
             }}
             className="text-black-primary font-semibold md:font-bold text-xl md:text-3xl"
           >
-            Lea Juice App
+            {highlightProject.title}
           </motion.h5>
           <motion.p
             initial={{
@@ -114,11 +116,7 @@ export default function Highlight() {
             }}
             className="text-slate-600 font-medium text-lg text-justify"
           >
-            Lea-Juice-App is an online marketplace for fresh juices, fruits, and
-            salads. Customers can browse products, add items to a cart, checkout
-            using integrated payment gateways, and leave reviews and comments.
-            The project includes an admin interface for managing products,
-            viewing sales and customers, and handling transactions.
+            {highlightProject.description}
           </motion.p>
           <motion.div
             initial={{
@@ -154,13 +152,13 @@ export default function Highlight() {
             >
               More
             </button>
-            <a
-              href="https://lea-juice-app.vercel.app/"
+            <Link
+              href={highlightProject.preview}
               target="_blank"
               className="hover:underline"
             >
               Preview
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>

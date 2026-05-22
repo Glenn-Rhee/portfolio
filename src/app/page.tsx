@@ -6,8 +6,6 @@ import Projects from "@/components/Projects";
 
 type SearchParams = Promise<{ [key: string]: string | undefined }>;
 
-export const metada = {}
-
 export default async function HomePage(props: { searchParams: SearchParams }) {
   const params = await props.searchParams;
 

@@ -65,9 +65,15 @@ export default function Experience() {
                   isLeft ? "lg:justify-start" : "lg:justify-end"
                 } justify-center`}
               >
-                <span className="hidden lg:flex absolute left-1/2 top-6 -translate-x-1/2 z-10 items-center justify-center">
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                  animate={isShow ? "show" : "hide"}
+                  variants={{ show: { opacity: 1 }, hide: { opacity: 0 } }}
+                  className="hidden lg:flex absolute left-1/2 top-6 -translate-x-1/2 z-10 items-center justify-center"
+                >
                   <span className="w-4 h-4 rounded-full bg-slate-900 ring-4 ring-white shadow-md" />
-                </span>
+                </motion.span>
 
                 <div
                   className={`w-full lg:w-[45%] flex flex-col ${

@@ -91,6 +91,13 @@ const projects: Project[] = [
     image: "/projects/p-13.png",
     year: 2026,
   },
+  {
+    title: "Indra Farma",
+    desc: "A pharmacy inventory system for Toko Obat Mantri Indra, tracking medicine stock in/out and sales transactions in real time.",
+    image: "/projects/p-14.png",
+    techs: ["NextJs", "TailwindCss", "Supabase", "Golang"],
+    year: 2026,
+  },
 ];
 export default function OtherProject() {
   const { gapFromTop } = useNavbar();

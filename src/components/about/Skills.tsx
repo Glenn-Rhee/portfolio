@@ -26,7 +26,7 @@ export default function Skills() {
   return (
     <div
       ref={ref}
-      className="w-full flex flex-col items-center md:gap-y-24 lg:gap-y-28 gap-y-16 justify-center"
+      className="w-full flex flex-col items-center gap-y-10"
     >
       {/* Skills & Expertise */}
       <div className="flex mx-auto flex-col gap-y-3 w-full">
@@ -138,16 +138,36 @@ export default function Skills() {
             ) : (
               <motion.div
                 key="default-cloud"
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.35, ease: "easeOut" }}
+                initial={{
+                  x: -40,
+                  opacity: 0,
+                }}
+                variants={variantsText}
+                animate={isShow ? "show" : "hide"}
+                transition={{
+                  duration: 0.4,
+                  ease: "easeOut",
+                  delay: 0,
+                }}
                 className="w-full flex flex-col items-center gap-y-4"
               >
-                <span className="text-slate-800 text-xs md:text-sm uppercase font-bold tracking-[0.3em]">
+                <motion.span
+                  initial={{
+                    x: -40,
+                    opacity: 0,
+                  }}
+                  variants={variantsText}
+                  animate={isShow ? "show" : "hide"}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeOut",
+                    delay: 0,
+                  }}
+                  className="text-slate-800 text-xs md:text-sm uppercase font-bold tracking-[0.3em]"
+                >
                   All Technologies
-                </span>
-                <div className="flex flex-wrap justify-center gap-2.5">
+                </motion.span>
+                <motion.div className="flex flex-wrap justify-center gap-2.5">
                   {allTechCloud.map((tech, i) => (
                     <motion.span
                       key={tech}
@@ -165,7 +185,7 @@ export default function Skills() {
                       {tech}
                     </motion.span>
                   ))}
-                </div>
+                </motion.div>
               </motion.div>
             )}
           </AnimatePresence>
@@ -190,9 +210,22 @@ export default function Skills() {
         }}
         className="space-y-4 flex flex-col items-center"
       >
-        <span className="text-slate-800 text-xs md:text-sm uppercase font-bold tracking-[0.3em]">
+        <motion.span
+          initial={{
+            x: -40,
+            opacity: 0,
+          }}
+          variants={variantsText}
+          animate={isShow ? "show" : "hide"}
+          transition={{
+            duration: 0.4,
+            ease: "easeOut",
+            delay: 0,
+          }}
+          className="text-slate-800 text-xs md:text-sm uppercase font-bold tracking-[0.3em]"
+        >
           Tools
-        </span>
+        </motion.span>
         <div className="flex flex-wrap justify-center gap-2.5">
           {tools.map((tool, i) => (
             <motion.span

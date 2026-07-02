@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { variantsText } from "../MainPage";
-import { highlightProject } from "@/utils/higlight-project";
+import { highlightProject } from "@/utils/projects";
 import Link from "next/link";
 
 export default function Highlight() {

@@ -4,7 +4,7 @@ export const skillCategories = [
     name: "Frontend Development",
     iconHref: "/skills/web-development.png",
     iconAlt: "Frontend Development icon",
-    blurb: "Membangun antarmuka yang responsif, cepat, dan enak dipakai.",
+    blurb: "Building responsive, fast, and user-friendly interfaces.",
     stack: [
       "HTML",
       "CSS",
@@ -21,7 +21,7 @@ export const skillCategories = [
     name: "Rest API",
     iconHref: "/skills/rest-api.png",
     iconAlt: "Rest API icon",
-    blurb: "Merancang dan mengonsumsi API yang rapi, aman, dan terdokumentasi.",
+    blurb: "Designing and consuming clean, secure, and well-documented APIs.",
     stack: ["ExpressJs", "NodeJs", "Postman", "Firebase", "Supabase"],
   },
   {
@@ -29,12 +29,11 @@ export const skillCategories = [
     name: "Backend Development",
     iconHref: "/skills/backend.png",
     iconAlt: "Backend Development icon",
-    blurb: "Mengelola logika server, database, dan skalabilitas sistem.",
+    blurb: "Managing server logic, databases, and system scalability.",
     stack: [
       "NodeJs",
       "ExpressJs",
       "Golang",
-      "PHP",
       "MySQL",
       "MongoDB",
       "Firebase",

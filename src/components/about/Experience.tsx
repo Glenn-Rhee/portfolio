@@ -56,7 +56,7 @@ export default function Experience() {
           <Timeline isShow={isShow} />
 
           {dataProfessExperience.map((item, index) => {
-            const isLeft = index % 2 === 0; // index genap (item ke-1, ke-3, ...) => kiri
+            const isLeft = index % 2 === 0;
 
             return (
               <div

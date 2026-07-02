@@ -3,55 +3,9 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { variantsText } from "../MainPage";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import { skillCategories } from "@/utils/skillCategories";
+import { tools } from "@/utils/tools";
 
-const skillCategories = [
-  {
-    id: "frontend",
-    name: "Frontend Development",
-    iconHref: "/skills/web-development.png",
-    iconAlt: "Frontend Development icon",
-    blurb: "Membangun antarmuka yang responsif, cepat, dan enak dipakai.",
-    stack: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "TypeScript",
-      "ReactJs",
-      "NextJs",
-      "TailwindCSS",
-      "Bootstrap",
-    ],
-  },
-  {
-    id: "restapi",
-    name: "Rest API",
-    iconHref: "/skills/rest-api.png",
-    iconAlt: "Rest API icon",
-    blurb: "Merancang dan mengonsumsi API yang rapi, aman, dan terdokumentasi.",
-    stack: ["ExpressJs", "NodeJs", "Postman", "Firebase", "Supabase"],
-  },
-  {
-    id: "backend",
-    name: "Backend Development",
-    iconHref: "/skills/backend.png",
-    iconAlt: "Backend Development icon",
-    blurb: "Mengelola logika server, database, dan skalabilitas sistem.",
-    stack: [
-      "NodeJs",
-      "ExpressJs",
-      "Golang",
-      "PHP",
-      "MySQL",
-      "MongoDB",
-      "Firebase",
-      "Supabase",
-    ],
-  },
-];
-
-const tools = ["VsCode", "Git", "Github", "Figma", "Postman", "Docker"];
-
-// Gabungan semua teknologi unik untuk tampilan default (belum ada yang diklik)
 const allTechCloud = Array.from(
   new Set(skillCategories.flatMap((c) => c.stack)),
 );

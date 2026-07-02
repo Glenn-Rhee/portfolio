@@ -49,6 +49,8 @@ const skillCategories = [
   },
 ];
 
+const tools = ["VsCode", "Git", "Github", "Figma", "Postman", "Docker"];
+
 // Gabungan semua teknologi unik untuk tampilan default (belum ada yang diklik)
 const allTechCloud = Array.from(
   new Set(skillCategories.flatMap((c) => c.stack)),
@@ -92,8 +94,7 @@ export default function Skills() {
             Skills and Expertise
           </h4>
           <span className="text-slate-700 text-sm md:text-base lg:text-lg">
-            Klik salah satu kategori untuk melihat teknologi yang saya kuasai di
-            dalamnya.
+            Click a category to see the technologies I use within it.
           </span>
         </motion.div>
 
@@ -190,7 +191,7 @@ export default function Skills() {
                 className="w-full flex flex-col items-center gap-y-4"
               >
                 <span className="text-slate-800 text-xs md:text-sm uppercase font-bold tracking-[0.3em]">
-                  Semua teknologi
+                  All Technologies
                 </span>
                 <div className="flex flex-wrap justify-center gap-2.5">
                   {allTechCloud.map((tech, i) => (
@@ -205,7 +206,7 @@ export default function Skills() {
                         ease: "easeInOut",
                         delay: (i % 6) * 0.15,
                       }}
-                      className="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-500 text-xs md:text-sm font-medium"
+                      className="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 text-xs md:text-sm font-semibold"
                     >
                       {tech}
                     </motion.span>
@@ -235,16 +236,28 @@ export default function Skills() {
         }}
         className="space-y-4 flex flex-col items-center"
       >
-        <h5 className="uppercase text-center text-lg md:text-xl lg:text-xl text-black-primary tracking-[0.4em]">
+        <span className="text-slate-800 text-xs md:text-sm uppercase font-bold tracking-[0.3em]">
           Tools
-        </h5>
-        <span className="font-semibold md:font-bold text-black-primary text-center">
-          VsCode | Git | Github |{" "}
-          <span className="text-slate-800 font-normal md:font-semibold">
-            Figma
-          </span>{" "}
-          | Postman
         </span>
+        <div className="flex flex-wrap justify-center gap-2.5">
+          {tools.map((tool, i) => (
+            <motion.span
+              key={tool}
+              animate={{
+                y: [0, -6, 0],
+              }}
+              transition={{
+                duration: 2.6 + (i % 4) * 0.4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: (i % 6) * 0.15,
+              }}
+              className="px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 text-xs md:text-sm font-semibold"
+            >
+              {tool}
+            </motion.span>
+          ))}
+        </div>
       </motion.div>
     </div>
   );

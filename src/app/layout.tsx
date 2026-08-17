@@ -11,7 +11,10 @@ const geistPoppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Ariel | Portfolio",
+  title: {
+    default: "Ariel | Fullstack Web Developer Portfolio",
+    template: "%s | Ariel",
+  },
   keywords: [
     "ariel rizki",
     "ariel portfolio",

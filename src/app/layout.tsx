@@ -23,7 +23,16 @@ export const metadata: Metadata = {
     "ariel rizki muhtamad bakri",
     "fullstack developer indonesia",
   ],
-  robots: "index, follow",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   description:
     "My name is Ariel, I'm passionate about fullstack web developer. I'm currently studying at Gunadarma University.",
 };

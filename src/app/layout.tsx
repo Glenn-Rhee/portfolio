@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     "ariel portfolio",
     "ariel rizki portfolio",
     "ariel rizki muhtamad bakri",
+    "fullstack developer indonesia",
   ],
   robots: "index, follow",
   description:

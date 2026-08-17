@@ -11,6 +11,7 @@ const geistPoppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.aaarrl.my.id/"),
   title: {
     default: "Ariel | Fullstack Web Developer Portfolio",
     template: "%s | Ariel",

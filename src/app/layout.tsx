@@ -41,6 +41,7 @@ export const metadata: Metadata = {
     description: "Portfolio Ariel Rizki Muhtamad Bakri...",
     url: "https://aaarrl.my.id/",
     siteName: "Ariel Portfolio",
+    locale: "id_ID",
   },
   description:
     "My name is Ariel, I'm passionate about fullstack web developer. I'm currently studying at Gunadarma University.",

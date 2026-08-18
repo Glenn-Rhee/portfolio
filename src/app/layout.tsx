@@ -34,7 +34,10 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "/", 
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Ariel | Fullstack Web Developer Portfolio",
   },
   description:
     "My name is Ariel, I'm passionate about fullstack web developer. I'm currently studying at Gunadarma University.",

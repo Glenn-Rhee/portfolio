@@ -38,6 +38,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Ariel | Fullstack Web Developer Portfolio",
+    description: "Portfolio Ariel Rizki Muhtamad Bakri...",
   },
   description:
     "My name is Ariel, I'm passionate about fullstack web developer. I'm currently studying at Gunadarma University.",

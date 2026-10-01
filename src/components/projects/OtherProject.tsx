@@ -6,13 +6,12 @@ import { useEffect, useState } from "react";
 import { useNavbar } from "@/store/NavbarStore";
 import { projects } from "@/utils/projects";
 
-
 export default function OtherProject() {
   const { gapFromTop } = useNavbar();
-  const [isShow, setIsShow] = useState(gapFromTop > 570);
+  const [isShow, setIsShow] = useState(gapFromTop >= 0);
 
   useEffect(() => {
-    if (gapFromTop > 570) {
+    if (gapFromTop >= 0) {
       setIsShow(true);
     } else {
       setIsShow(false);

@@ -47,108 +47,112 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="mx-auto max-w-[90rem] sm:px-6 h-18 z-[70] lg:h-20 px-10 md:px-16 lg:px-32 fixed top-0 right-0 left-0 flex items-center justify-between lg:justify-self-start w-screen bg-transparent shadow-[0_1px_8px_0_rgba(100,120,255,0.1)] backdrop-blur-[7px]">
-        <motion.h1
-          animate={isOpen ? "open" : "close"}
-          variants={{
-            open: {
-              color: "white",
-            },
-            close: {
-              color: "#121212",
-            },
-          }}
-          transition={{
-            delay: isOpen ? 0.3 : 0,
-          }}
-          className={cn(
-            "relative z-50 flex items-center gap-x-4 text-black-primary text-2xl font-semibold tracking-wider",
-            {
-              "-ms-6": pathname !== "/",
-            },
-          )}
-        >
-          {pathname !== "/" ? (
-            <button onClick={() => router.back()} className="cursor-pointer">
-              <ChevronLeft size={24} color="oklch(0.208 0.042 265.755)" />
-            </button>
-          ) : null}
-          Ariel
-        </motion.h1>
-        <ul className="lg:flex hidden items-center justify-evenly gap-x-14 min-w-[70%] mx-auto ms-80">
-          <ItemNavbar
-            isActive={pathname === "/" && gapFromTop >= 0 && gapFromTop <= 570}
+      <nav className="fixed top-0 left-0 right-0 z-[70] w-full bg-transparent shadow-[0_1px_8px_0_rgba(100,120,255,0.1)] backdrop-blur-[7px]">
+        <div className="mx-auto flex h-18 lg:h-20 w-full max-w-[90rem] items-center justify-between px-10 sm:px-6 md:px-16 lg:px-32">
+          <motion.h1
+            animate={isOpen ? "open" : "close"}
+            variants={{
+              open: {
+                color: "white",
+              },
+              close: {
+                color: "#121212",
+              },
+            }}
+            transition={{
+              delay: isOpen ? 0.3 : 0,
+            }}
+            className={cn(
+              "relative z-50 flex items-center gap-x-4 text-black-primary text-2xl font-semibold tracking-wider",
+              {
+                "-ms-6": pathname !== "/",
+              },
+            )}
           >
-            <a
-              href="#home"
-              onClick={(e) => {
-                e.preventDefault();
-                goToElement(0);
-              }}
+            {pathname !== "/" ? (
+              <button onClick={() => router.back()} className="cursor-pointer">
+                <ChevronLeft size={24} color="oklch(0.208 0.042 265.755)" />
+              </button>
+            ) : null}
+            Ariel
+          </motion.h1>
+          <ul className="lg:flex hidden items-center justify-evenly gap-x-14 min-w-[70%] mx-auto ms-80">
+            <ItemNavbar
+              isActive={
+                pathname === "/" && gapFromTop >= 0 && gapFromTop <= 570
+              }
             >
-              <House size={24} color="oklch(0.208 0.042 265.755)" />
-            </a>
-          </ItemNavbar>
-          <ItemNavbar
-            isActive={
-              (pathname === "/" && gapFromTop > 570 && gapFromTop <= 1300) ||
-              pathname === "/about"
-            }
-          >
-            <a
-              href="#about"
-              onClick={(e) => {
-                e.preventDefault();
-                if (pathname === "/") {
-                  const element = document.querySelector(
-                    "#about",
-                  ) as HTMLDivElement;
-                  goToElement(element.offsetTop);
-                } else {
-                  goToElement("about");
-                }
-              }}
+              <a
+                href="#home"
+                onClick={(e) => {
+                  e.preventDefault();
+                  goToElement(0);
+                }}
+              >
+                <House size={24} color="oklch(0.208 0.042 265.755)" />
+              </a>
+            </ItemNavbar>
+            <ItemNavbar
+              isActive={
+                (pathname === "/" && gapFromTop > 570 && gapFromTop <= 1300) ||
+                pathname === "/about"
+              }
             >
-              <UserRound size={24} color="oklch(0.208 0.042 265.755)" />
-            </a>
-          </ItemNavbar>
-          <ItemNavbar
-            isActive={
-              (pathname === "/" && gapFromTop > 1300 && gapFromTop <= 1900) ||
-              pathname === "/projects"
-            }
-          >
-            <a
-              href="#projects"
-              onClick={(e) => {
-                e.preventDefault();
-                if (pathname === "/") {
-                  const element = document.querySelector(
-                    "#projects",
-                  ) as HTMLDivElement;
-                  goToElement(element.offsetTop);
-                } else {
-                  goToElement("projects");
-                }
-              }}
+              <a
+                href="#about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (pathname === "/") {
+                    const element = document.querySelector(
+                      "#about",
+                    ) as HTMLDivElement;
+                    goToElement(element.offsetTop);
+                  } else {
+                    goToElement("about");
+                  }
+                }}
+              >
+                <UserRound size={24} color="oklch(0.208 0.042 265.755)" />
+              </a>
+            </ItemNavbar>
+            <ItemNavbar
+              isActive={
+                (pathname === "/" && gapFromTop > 1300 && gapFromTop <= 1900) ||
+                pathname === "/projects"
+              }
             >
-              <FolderOpenDot size={24} color="oklch(0.208 0.042 265.755)" />
-            </a>
-          </ItemNavbar>
-          <ItemNavbar isActive={pathname === "/" && gapFromTop > 1900}>
-            <Link
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                goToElement(2750);
-              }}
-            >
-              <Mail size={24} color="oklch(0.208 0.042 265.755)" />
-            </Link>
-          </ItemNavbar>
-        </ul>
-        <HumbergerMenu />
-        <ContentMenu />
+              <a
+                href="#projects"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (pathname === "/") {
+                    const element = document.querySelector(
+                      "#projects",
+                    ) as HTMLDivElement;
+                    goToElement(element.offsetTop);
+                  } else {
+                    goToElement("projects");
+                  }
+                }}
+              >
+                <FolderOpenDot size={24} color="oklch(0.208 0.042 265.755)" />
+              </a>
+            </ItemNavbar>
+            <ItemNavbar isActive={pathname === "/" && gapFromTop > 1900}>
+              <Link
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  goToElement(2750);
+                }}
+              >
+                <Mail size={24} color="oklch(0.208 0.042 265.755)" />
+              </Link>
+            </ItemNavbar>
+          </ul>
+          <HumbergerMenu />
+          <ContentMenu />
+        </div>
       </nav>
       {gapFromTop > 570 ? (
         <button

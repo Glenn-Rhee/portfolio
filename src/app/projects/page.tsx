@@ -1,5 +1,4 @@
 import Container from "@/components/Container";
-import Highlight from "@/components/projects/Highlight";
 import OtherProject from "@/components/projects/OtherProject";
 import { Metadata } from "next";
 
@@ -11,9 +10,6 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <div className="overflow-hidden space-y-5">
-      <Container className="flex-col gap-y-3 md:gap-y-0 py-10 min-h-fit mt-14">
-        <Highlight />
-      </Container>
       <Container
         id="other"
         className="flex-col gap-y-3 md:gap-y-0 py-10 min-h-fit mt-14"

@@ -5,8 +5,8 @@ const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 const redirect_uri =
   process.env.NODE_ENV === "production"
-    ? "https://portfolio-three-azure-71.vercel.app/api/callback"
-    : "http://localhost:3000/api/callback";
+    ? "https://aaarrl.my.id/api/callback"
+    : "http://127.0.0.1:3000/api/callback";
 export async function GET(req: NextRequest): Promise<NextResponse> {
   try {
     const code = req.nextUrl.searchParams.get("code");
@@ -21,7 +21,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
         Authorization:
           "Basic " +
           Buffer.from(
-            process.env.CLIENT_ID + ":" + process.env.SPOTIFY_CLIENT_SECRET
+            process.env.CLIENT_ID + ":" + process.env.SPOTIFY_CLIENT_SECRET,
           ).toString("base64"),
       },
       body: new URLSearchParams({

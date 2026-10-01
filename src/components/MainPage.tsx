@@ -69,9 +69,10 @@ export default function MainPage() {
           }}
           className="text-sm md:text-xl text-gray-600"
         >
-          A junior fullstack developer who currently focused on Web Development.
-          Other than that, I also interested in Mobile Development. I love to
-          learn new things and always open to new opportunities.
+          I'm an Information Systems student at Gunadarma University focused on
+          full-stack web development. I enjoy building scalable web
+          applications, solving real-world problems, and continuously improving
+          my skills across frontend and backend technologies.
         </motion.p>
         <motion.div
           initial={{

@@ -67,7 +67,9 @@ export default function RootLayout({
         className={`${geistPoppins.variable} overflow-x-hidden antialiased bg-gray-200`}
       >
         <Navbar />
-        {children}
+        <div className="mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-8">
+          {children}
+        </div>
       </body>
     </html>
   );

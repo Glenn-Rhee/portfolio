@@ -6,6 +6,26 @@ import { variantsText } from "../MainPage";
 
 const dataProfessExperience = [
   {
+    title: "Profile Image Studio",
+    position: "Frontend Developer",
+    type: "Internship",
+    description:
+      "Implemented responsive and interactive web interfaces from UI/UX designs using Next.js, React, and Tailwind CSS, while developing reusable UI components and integrating REST APIs to support dynamic web functionality. Optimized layouts and user interfaces to ensure consistent experiences across different screen sizes.",
+    startDate: "July 2026",
+    endDate: "Present",
+    location: "Malang, Indonesia",
+  },
+  {
+    title: "Barberstuff",
+    position: "Backend Developer",
+    type: "Freelancer",
+    description:
+      "Developed a centralized backend API using Go, Gin, and GORM to streamline booking, cashier, financial, and employee management across multiple barber business applications. Implemented secure JWT authentication, role-based authorization, and PostgreSQL-based data management.",
+    startDate: "Aug 2026",
+    endDate: "Present",
+    location: "Bekasi, Indonesia",
+  },
+  {
     title: "Lembaga Pengembangan Komputerisasi Universitas Gunadarma",
     position: "Course Assistant",
     type: "Part-time",
@@ -108,11 +128,11 @@ export default function Experience() {
                         End
                       </span>
                     </div>
-                    <div className="flex flex-col items-center justify-center">
-                      <span className="font-medium text-white/80 md:font-bold text-sm md:text-base">
+                    <div className="flex text-white flex-col items-center justify-center">
+                      <span className="font-medium md:font-bold text-sm md:text-base">
                         {item.location}
                       </span>
-                      <span className="md:font-medium text-sm text-white/90">
+                      <span className="md:font-medium text-sm text-white/80">
                         Location
                       </span>
                     </div>

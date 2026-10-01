@@ -2,21 +2,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { variantsText } from "../MainPage";
-import { useEffect, useState } from "react";
-import { useNavbar } from "@/store/NavbarStore";
 import { projects } from "@/utils/projects";
 
 export default function OtherProject() {
-  const { gapFromTop } = useNavbar();
-  const [isShow, setIsShow] = useState(gapFromTop >= 0);
-
-  useEffect(() => {
-    if (gapFromTop >= 0) {
-      setIsShow(true);
-    } else {
-      setIsShow(false);
-    }
-  }, [gapFromTop]);
   return (
     <div className="ms-2 md:ms-0 pb-10 w-full md:mt-0">
       <motion.h3
@@ -25,7 +13,7 @@ export default function OtherProject() {
           opacity: 0,
         }}
         variants={variantsText}
-        animate={isShow ? "show" : "hide"}
+        animate={"show"}
         transition={{
           duration: 0.5,
           ease: "easeOut",
@@ -49,7 +37,7 @@ export default function OtherProject() {
                 show: { y: 0, opacity: 1 },
                 hide: { y: 40, opacity: 0 },
               }}
-              animate={isShow ? "show" : "hide"}
+              animate={"show"}
               transition={{
                 duration: 0.5,
                 ease: "easeOut",

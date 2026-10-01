@@ -3,7 +3,7 @@ import OtherProject from "@/components/projects/OtherProject";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ariel | Projects",
+  title: "Projects",
   keywords: ["Ariel projects", "Ariel project", "Project Ariel"],
 };
 

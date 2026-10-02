@@ -35,7 +35,7 @@ export default function Container(props: ContainerProps) {
     <div
       id={id}
       className={cn(
-        "min-h-fit w-full flex items-center justify-center px-4 md:px-16 lg:px-32 relative z-10",
+        "min-h-fit w-full flex items-center justify-center px-4 md:px-16 lg:px-20 relative z-10",
         className,
       )}
     >

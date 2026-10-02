@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { variantsText } from "../MainPage";
 import { projects } from "@/utils/projects";
+import Link from "next/link";
 
 export default function OtherProject() {
   return (
@@ -21,7 +22,7 @@ export default function OtherProject() {
         }}
         className="font-bold md:text-start text-center text-2xl lg:text-3xl"
       >
-        Other Projects
+        Projects
       </motion.h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
         {projects
@@ -43,36 +44,40 @@ export default function OtherProject() {
                 ease: "easeOut",
                 delay: 0.4 + i * 0.2,
               }}
-              className="relative group overflow-hidden cursor-pointer"
             >
-              <Image
-                src={project.image}
-                alt={`Project ${i + 1} Ariel`}
-                width={700}
-                height={700}
-                className="shadow-md w-full"
-              />
-              <div className="py-2 z-20 px-2 group-hover:opacity-50 group-active:opacity-50 font-semibold text-lg bg-slate-600 text-white absolute top-0 left-0">
-                {project.year}
-              </div>
-              <div className="absolute px-10 group-hover:opacity-0 group-active:opacity-0 transition-all duration-300 top-0 right-0 left-0 bottom-0 bg-gray-400/85 flex flex-col gap-y-1 md:gap-y-3 items-center justify-center">
-                <h1 className="text-black-primary text-center text-xl lg:text-3xl font-semibold">
-                  {project.title}
-                </h1>
-                <p className="text-black-primary text-sm lg:text-lg font-medium text-center">
-                  {project.desc}
-                </p>
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 justify-center">
-                  {project.techs.map((tech, i) => (
-                    <div
-                      key={i}
-                      className="py-1 lg:py-2 px-3 md:font-semibold text-sm  bg-slate-600 text-white"
-                    >
-                      {tech}
-                    </div>
-                  ))}
+              <Link
+                className="relative group overflow-hidden cursor-pointer"
+                href={"/projects/i"}
+              >
+                <Image
+                  src={project.image}
+                  alt={`Project ${i + 1} Ariel`}
+                  width={700}
+                  height={700}
+                  className="shadow-md w-full"
+                />
+                <div className="py-2 z-20 px-2 group-hover:opacity-50 group-active:opacity-50 font-semibold text-lg bg-slate-600 text-white absolute top-0 left-0">
+                  {project.year}
                 </div>
-              </div>
+                <div className="absolute px-10 group-hover:opacity-0 group-active:opacity-0 transition-all duration-300 top-0 right-0 left-0 bottom-0 bg-gray-400/85 flex flex-col gap-y-1 md:gap-y-3 items-center justify-center">
+                  <h1 className="text-black-primary text-center text-xl lg:text-3xl font-semibold">
+                    {project.title}
+                  </h1>
+                  <p className="text-black-primary text-sm lg:text-lg font-medium text-center">
+                    {project.desc}
+                  </p>
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 justify-center">
+                    {project.techs.map((tech, i) => (
+                      <div
+                        key={i}
+                        className="py-1 lg:py-2 px-3 md:font-semibold text-sm  bg-slate-600 text-white"
+                      >
+                        {tech}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Link>
             </motion.div>
           ))}
       </div>

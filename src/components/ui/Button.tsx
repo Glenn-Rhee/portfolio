@@ -3,12 +3,6 @@ import { cn } from "@/utils/cn";
 type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
 type ButtonSize = "md" | "sm" | "auto";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  icon?: React.ReactNode;
-}
-
 const variants: Record<ButtonVariant, string> = {
   // base design asli
   primary:
@@ -25,9 +19,37 @@ const sizes: Record<ButtonSize, string> = {
   auto: "w-auto px-5 py-2 text-base md:text-lg",
 };
 
-export default function Button({
+const baseStyles = cn(
+  "inline-flex cursor-pointer items-center justify-center gap-x-2 rounded-lg transition active:scale-95",
+  "disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100",
+  // untuk elemen non-button (Link/a) yang diberi aria-disabled
+  "aria-disabled:pointer-events-none aria-disabled:opacity-50",
+);
+
+interface ButtonVariantsOptions {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  className?: string;
+}
+
+export function buttonVariants({
   variant = "primary",
   size = "md",
+  className,
+}: ButtonVariantsOptions = {}) {
+  return cn(baseStyles, sizes[size], variants[variant], className);
+}
+
+interface ButtonProps
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    Omit<ButtonVariantsOptions, "className"> {
+  icon?: React.ReactNode;
+}
+
+export default function Button({
+  variant,
+  size,
   icon,
   className,
   children,
@@ -37,13 +59,7 @@ export default function Button({
   return (
     <button
       type={type}
-      className={cn(
-        "inline-flex cursor-pointer items-center justify-center gap-x-2 rounded-lg transition active:scale-95",
-        "disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100",
-        sizes[size],
-        variants[variant],
-        className,
-      )}
+      className={buttonVariants({ variant, size, className })}
       {...props}
     >
       {icon}

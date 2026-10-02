@@ -118,7 +118,7 @@ export default function Navbar() {
             <ItemNavbar
               isActive={
                 (pathname === "/" && gapFromTop > 1300 && gapFromTop <= 1900) ||
-                pathname === "/projects"
+                pathname.includes("/projects")
               }
             >
               <a

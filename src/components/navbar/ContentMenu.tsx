@@ -95,7 +95,7 @@ export default function ContentMenu() {
                 (pathName === "/" &&
                   gapFromTop > v.min! &&
                   gapFromTop <= v.max!) ||
-                  pathName === `/${v.title.toLowerCase()}`
+                  pathName.includes(`/${v.title.toLowerCase()}`)
                   ? "after:w-full"
                   : "after:w-0",
               )}

@@ -12,7 +12,7 @@ export default function ProjectsPage() {
     <div className="overflow-hidden space-y-5">
       <Container
         id="other"
-        className="flex-col gap-y-3 md:gap-y-0 py-10 min-h-fit mt-14"
+        className="flex-col gap-y-3 md:gap-y-0 lg:px-20 py-10 min-h-fit mt-14"
       >
         <OtherProject />
       </Container>

@@ -1,6 +1,12 @@
 import { cn } from "@/utils/cn";
 
-type BadgeVariant = "default" | "primary" | "success" | "warning" | "danger";
+type BadgeVariant =
+  | "default"
+  | "soft"
+  | "primary"
+  | "success"
+  | "warning"
+  | "danger";
 type BadgeSize = "md" | "sm";
 
 interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
@@ -10,12 +16,12 @@ interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 const variants: Record<BadgeVariant, string> = {
-  // base design asli, tidak diubah
   default: "bg-white border-slate-200 text-slate-700",
-  primary: "bg-blue-50 border-blue-200 text-blue-700",
+  primary: "bg-slate-600 border-slate-700/50 text-white",
   success: "bg-emerald-50 border-emerald-200 text-emerald-700",
   warning: "bg-amber-50 border-amber-200 text-amber-700",
   danger: "bg-red-50 border-red-200 text-red-700",
+  soft: "bg-slate-100 border-transparent text-slate-700",
 };
 
 const sizes: Record<BadgeSize, string> = {

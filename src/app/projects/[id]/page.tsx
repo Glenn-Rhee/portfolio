@@ -18,7 +18,7 @@ export default function ProjectDetail() {
         <KeyFeatures />
         <ChallangeProject />
         <TechStack />
-        <div className="w-full flex justify-between items-center py-2 px-4 bg-slate-300/50 rounded-lg border border-slate-500/30">
+        <div className="w-full flex flex-col md:flex-row gap-3 justify-between items-center py-2 px-4 bg-slate-300/50 rounded-lg border border-slate-500/30">
           <div className="flex items-center gap-x-2">
             <ArrowUpRight className="size-5 hidden md:block" />
             <div className="flex flex-col gap-y-1">
@@ -31,7 +31,10 @@ export default function ProjectDetail() {
               </span>
             </div>
           </div>
-          <Link href={"/?to=2750"} className={buttonVariants()}>
+          <Link
+            href={"/?to=2750"}
+            className={buttonVariants({ className: "text-center w-full" })}
+          >
             Contact Me <ArrowRight className="size-5 hidden md:block" />
           </Link>
         </div>

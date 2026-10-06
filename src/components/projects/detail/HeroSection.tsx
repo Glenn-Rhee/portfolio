@@ -2,7 +2,6 @@ import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { CalendarDaysIcon, ExternalLink, Github, Tag } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function HeroSection() {
   return (

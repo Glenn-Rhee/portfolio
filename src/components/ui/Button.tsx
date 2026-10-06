@@ -20,7 +20,7 @@ const sizes: Record<ButtonSize, string> = {
 };
 
 const baseStyles = cn(
-  "inline-flex cursor-pointer items-center justify-center gap-x-2 rounded-lg transition active:scale-95",
+  "inline-flex cursor-pointer items-center justify-center gap-x-2 rounded-lg transition active:scale-[0.98]",
   "disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100",
   // untuk elemen non-button (Link/a) yang diberi aria-disabled
   "aria-disabled:pointer-events-none aria-disabled:opacity-50",
